@@ -37,7 +37,7 @@ export default function Process() {
   ];
 
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+    <section id="services" className="py-32 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-white/5 animate-gradient-shift opacity-30"></div>
 

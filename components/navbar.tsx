@@ -10,9 +10,17 @@ export default function Navbar() {
   const navItems = [
     { label: 'Services', href: '#services' },
     { label: 'Features', href: '#features' },
-    { label: 'Portfolio', href: '#portfolio' },
+    { label: 'Portfolio', href: 'https://seekehr.github.io/' },
     { label: 'Contact', href: '#contact' },
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith('#')) return;
+    e.preventDefault();
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    setIsOpen(false);
+  };
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
@@ -32,6 +40,7 @@ export default function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="text-sm text-white/70 hover:text-white transition-colors font-medium"
               >
                 {item.label}
@@ -76,8 +85,8 @@ export default function Navbar() {
                 <a
                   key={item.label}
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className="text-sm text-white/70 hover:text-white transition-colors font-medium"
-                  onClick={() => setIsOpen(false)}
                 >
                   {item.label}
                 </a>

@@ -72,7 +72,7 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="services" className="py-32 px-4 sm:px-6 lg:px-8 relative bg-black">
+    <section id="features" className="py-32 px-4 sm:px-6 lg:px-8 relative bg-black">
       <div className="max-w-7xl mx-auto">
         {/* Section Header with scroll animation */}
         <div className="space-y-6 mb-20 border-t border-white/10 pt-10">
