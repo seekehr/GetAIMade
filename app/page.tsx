@@ -9,9 +9,11 @@ import Process from '@/components/process';
 import Testimonials from '@/components/testimonials';
 import CTA from '@/components/cta';
 import Footer from '@/components/footer';
+import ContactModal from '@/components/contact-modal';
 
 export default function Page() {
   const [scrollY, setScrollY] = useState(0);
+  const [contactOpen, setContactOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,9 +38,10 @@ export default function Page() {
         />
       </div>
 
+      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
       <div className="relative z-10">
-        <Navbar />
-        <Hero />
+        <Navbar onContact={() => setContactOpen(true)} />
+        <Hero onContact={() => setContactOpen(true)} />
         <Services />
         <Stats />
         <Process />

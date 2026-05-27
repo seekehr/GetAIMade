@@ -5,7 +5,11 @@ import { useState } from 'react';
 import { Button } from './ui/button';
 import { Logo } from './logo';
 
-export default function Navbar() {
+interface Props {
+  onContact?: () => void;
+}
+
+export default function Navbar({ onContact }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
@@ -18,6 +22,11 @@ export default function Navbar() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (!href.startsWith('#')) return;
     e.preventDefault();
+    if (href === '#contact') {
+      onContact?.();
+      setIsOpen(false);
+      return;
+    }
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
     setIsOpen(false);
@@ -49,6 +58,7 @@ export default function Navbar() {
           {/* CTA Button & Mobile Menu */}
           <div className="flex items-center gap-4">
             <Button
+              onClick={onContact}
               className="hidden md:flex bg-white hover:bg-white/90 text-black rounded-full px-6 h-10 text-sm font-bold"
             >
               Contact
@@ -83,7 +93,7 @@ export default function Navbar() {
                   {item.label}
                 </a>
               ))}
-              <Button className="w-full bg-white hover:bg-white/90 text-black rounded-full font-bold mt-2">
+              <Button onClick={() => { onContact?.(); setIsOpen(false); }} className="w-full bg-white hover:bg-white/90 text-black rounded-full font-bold mt-2">
                 Contact
               </Button>
             </div>

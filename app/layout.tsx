@@ -11,11 +11,8 @@ export const metadata: Metadata = {
   description: 'Build powerful AI automations, chatbots, and intelligent systems for your business. Custom AI solutions for workflow automation, lead generation, and enterprise integration.',
   generator: 'v0.app',
   icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-    ],
-    apple: '/favicon.ico',
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    apple: '/favicon.svg',
   },
 }
 

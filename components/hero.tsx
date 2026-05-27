@@ -4,7 +4,11 @@ import { ArrowRight, MessageCircle, Zap, Users, Smartphone, BarChart3 } from 'lu
 import { Button } from './ui/button';
 import { Logo } from './logo';
 
-export default function Hero() {
+interface Props {
+  onContact?: () => void;
+}
+
+export default function Hero({ onContact }: Props) {
   return (
     <section className="flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-black">
       <div className="max-w-7xl w-full">
@@ -29,7 +33,7 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <Button className="bg-white hover:bg-white/90 text-black font-bold px-8 h-12 rounded-full flex items-center gap-2 group">
+              <Button onClick={onContact} className="bg-white hover:bg-white/90 text-black font-bold px-8 h-12 rounded-full flex items-center gap-2 group">
                 Contact
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
