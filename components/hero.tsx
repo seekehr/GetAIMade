@@ -15,11 +15,6 @@ export default function Hero({ onContact }: Props) {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Text Content */}
           <div className="space-y-8 z-10">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 border border-white/20 rounded-full">
-              <Zap className="w-4 h-4 text-white" />
-              <span className="text-xs font-semibold text-white/80 uppercase tracking-wide">AI-POWERED SOLUTIONS</span>
-            </div>
 
             {/* Heading */}
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight text-white animate-fade-in-up">

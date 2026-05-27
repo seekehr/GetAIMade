@@ -5,23 +5,23 @@ import { Star } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: '"Get AI Made built an incredible chatbot for our business. It increased our leads by 300%"',
-    author: 'John Carter',
-    role: 'CEO, GrowthLab',
+    quote: '"Get AI Made built an incredible chatbot for our business. It increased our leads by A LOT"',
+    author: 'Prim',
+    role: 'CEO, LunarProxy',
     rating: 5,
     avatar: '👨‍💼',
   },
   {
-    quote: '"The automation system they built saved us 20+ hours every week. Amazing team!"',
-    author: 'Sarah Mitchell',
-    role: 'Founder, Elevate Digital',
+    quote: '"The automation system they built saved us 20+ hours every week. Amazing guy!"',
+    author: 'Ejaz',
+    role: 'Founder of many startups',
     rating: 5,
     avatar: '👩‍💼',
   },
   {
     quote: '"Professional, fast, and reliable. Our go-to team for all AI and automation needs."',
-    author: 'David Lee',
-    role: 'CTO, Nexus Systems',
+    author: 'Roy Isaanya',
+    role: 'Founder, ReplyBot',
     rating: 5,
     avatar: '👨‍💻',
   },

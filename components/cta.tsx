@@ -3,7 +3,11 @@
 import { ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 
-export default function CTA() {
+interface Props {
+  onContact?: () => void;
+}
+
+export default function CTA({ onContact }: Props) {
   return (
     <section className="py-32 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-5xl mx-auto relative">
@@ -24,16 +28,20 @@ export default function CTA() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
               <Button
+                onClick={onContact}
                 className="bg-white hover:bg-white/90 text-black rounded-full px-10 h-12 text-base font-bold flex items-center justify-center gap-2 group/btn"
               >
                 Contact
                 <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
               </Button>
               <Button
+                asChild
                 className="border border-white/30 hover:border-white/50 text-white hover:bg-white/5 rounded-full px-10 h-12 text-base font-bold transition-all bg-transparent"
               >
-                View Services
-                <ArrowRight className="w-4 h-4" />
+                <a href="#services">
+                  View Services
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </Button>
             </div>
           </div>

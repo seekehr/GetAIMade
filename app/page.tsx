@@ -46,7 +46,7 @@ export default function Page() {
         <Stats />
         <Process />
         <Testimonials />
-        <CTA />
+        <CTA onContact={() => setContactOpen(true)} />
         <Footer />
       </div>
     </div>
