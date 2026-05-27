@@ -2,6 +2,7 @@
 
 import { ArrowRight, MessageCircle, Zap, Users, Smartphone, BarChart3 } from 'lucide-react';
 import { Button } from './ui/button';
+import { Logo } from './logo';
 
 export default function Hero() {
   return (
@@ -29,7 +30,7 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <Button className="bg-white hover:bg-white/90 text-black font-bold px-8 h-12 rounded-full flex items-center gap-2 group">
-                Book a Free Call
+                Contact
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button className="border border-white/30 hover:border-white/50 text-white font-bold px-8 h-12 rounded-full bg-transparent transition-all">
@@ -80,8 +81,8 @@ export default function Hero() {
 
               {/* Center Icon with Glow */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 sm:w-24 h-20 sm:h-24 rounded-2xl border-2 border-white/40 flex items-center justify-center bg-black/60 backdrop-blur-sm hover:border-white/80 transition-all animate-pulse-scale animate-glow">
-                  <MessageCircle className="w-10 sm:w-12 h-10 sm:h-12 text-white animate-pulse" strokeWidth={1.5} />
+                <div className="w-20 sm:w-24 h-20 sm:h-24 rounded-2xl border-2 border-white/40 flex items-center justify-center bg-black/60 backdrop-blur-sm hover:border-white/80 transition-all animate-pulse-scale animate-glow p-3 sm:p-4">
+                  <Logo size={80} className="w-full h-full rounded-xl animate-pulse" />
                 </div>
               </div>
             </div>

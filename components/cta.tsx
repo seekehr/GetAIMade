@@ -26,7 +26,7 @@ export default function CTA() {
               <Button
                 className="bg-white hover:bg-white/90 text-black rounded-full px-10 h-12 text-base font-bold flex items-center justify-center gap-2 group/btn"
               >
-                Book a Free Call
+                Contact
                 <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
               </Button>
               <Button

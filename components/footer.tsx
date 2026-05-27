@@ -1,6 +1,7 @@
 'use client';
 
 import { Mail, MessageSquare } from 'lucide-react';
+import { Logo } from './logo';
 
 const footerLinks = [
   {
@@ -9,7 +10,7 @@ const footerLinks = [
   },
   {
     title: 'Company',
-    links: ['About', 'Blog', 'Careers', 'Press', 'Contact'],
+    links: ['About', 'Contact'],
   },
   {
     title: 'Legal',
@@ -32,10 +33,7 @@ export default function Footer() {
           {/* Logo & Tagline */}
           <div className="space-y-5">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-black font-black text-sm">
-                AI
-              </div>
-              <span className="font-black text-lg text-white">Get AI Made</span>
+              <Logo size={40} className="w-10 h-10 rounded-lg" />
             </div>
             <p className="text-white/60 leading-relaxed font-light text-sm">
               Cutting-edge AI automation for modern businesses.

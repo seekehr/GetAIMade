@@ -3,6 +3,7 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from './ui/button';
+import { Logo } from './logo';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,10 +29,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center text-black font-black text-sm">
-              AI
-            </div>
-            <span className="font-black text-base text-white">GET AI MADE</span>
+            <Logo size={36} className="w-9 h-9 rounded-lg" />
           </div>
 
           {/* Desktop Navigation */}
@@ -53,15 +51,9 @@ export default function Navbar() {
             <Button
               className="hidden md:flex bg-white hover:bg-white/90 text-black rounded-full px-6 h-10 text-sm font-bold"
             >
-              Book a Call
+              Contact
             </Button>
 
-            {/* Theme toggle button */}
-            <button className="p-2 hover:bg-white/10 rounded-lg transition-colors">
-              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 015.646 5.646 9 9 0 0020.354 15.354z" />
-              </svg>
-            </button>
 
             {/* Mobile Menu Button */}
             <button
@@ -92,7 +84,7 @@ export default function Navbar() {
                 </a>
               ))}
               <Button className="w-full bg-white hover:bg-white/90 text-black rounded-full font-bold mt-2">
-                Book a Call
+                Contact
               </Button>
             </div>
           </div>
