@@ -32,7 +32,10 @@ export default function Hero({ onContact }: Props) {
                 Contact
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button className="border border-white/30 hover:border-white/50 text-white font-bold px-8 h-12 rounded-full bg-transparent transition-all">
+              <Button
+                onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
+                className="border border-white/30 hover:border-white/50 text-white font-bold px-8 h-12 rounded-full bg-transparent transition-all"
+              >
                 Explore Services
                 <ArrowRight className="w-4 h-4" />
               </Button>
