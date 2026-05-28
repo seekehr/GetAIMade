@@ -40,7 +40,7 @@ export default function Hero({ onContact }: Props) {
           </div>
 
           {/* Right Column - 3D Mesh Visualization with Floating Badges */}
-          <div className="relative h-64 sm:h-96 lg:h-auto lg:min-h-[600px] flex items-center justify-center overflow-hidden">
+          <div className="relative h-72 sm:h-96 lg:h-auto lg:min-h-[600px] flex items-center justify-center overflow-hidden">
             {/* Animated background gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 animate-gradient-shift pointer-events-none"></div>
 
@@ -97,52 +97,52 @@ export default function Hero({ onContact }: Props) {
             </div>
 
             {/* Floating AI Service Badges - Positioned Around Mesh */}
-            <div className="absolute inset-0 pointer-events-none hidden lg:block">
+            <div className="absolute inset-0 pointer-events-none">
               {/* AI Chatbots - Top Right */}
-              <div className="absolute top-12 right-0 animate-float float-delay-1 animate-fade-in-right" style={{animationDelay: '0.3s'}}>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
-                  <MessageCircle className="w-4 h-4 text-white" />
-                  <span className="text-xs font-semibold text-white whitespace-nowrap">AI Chatbots</span>
+              <div className="absolute top-8 sm:top-12 right-0 animate-float float-delay-1 animate-fade-in-right" style={{animationDelay: '0.3s'}}>
+                <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
+                  <MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 text-white shrink-0" />
+                  <span className="text-[10px] sm:text-xs font-semibold text-white whitespace-nowrap">AI Chatbots</span>
                 </div>
               </div>
 
-              {/* Automations - Right */}
+              {/* Automations - Right Center */}
               <div className="absolute top-1/2 right-0 -translate-y-1/2 animate-float float-delay-2 animate-fade-in-right" style={{animationDelay: '0.4s'}}>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
-                  <Zap className="w-4 h-4 text-white" />
-                  <span className="text-xs font-semibold text-white whitespace-nowrap">Automations</span>
+                <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
+                  <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-white shrink-0" />
+                  <span className="text-[10px] sm:text-xs font-semibold text-white whitespace-nowrap">Automations</span>
                 </div>
               </div>
 
               {/* Lead Generation - Bottom Right */}
-              <div className="absolute bottom-12 right-0 animate-float float-delay-3 animate-fade-in-right" style={{animationDelay: '0.5s'}}>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
-                  <BarChart3 className="w-4 h-4 text-white" />
-                  <span className="text-xs font-semibold text-white whitespace-nowrap">Lead Gen</span>
-                </div>
-              </div>
-
-              {/* AI Agents - Left */}
-              <div className="absolute top-1/3 left-0 animate-float float-delay-2 animate-fade-in-left" style={{animationDelay: '0.35s'}}>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
-                  <Users className="w-4 h-4 text-white" />
-                  <span className="text-xs font-semibold text-white whitespace-nowrap">AI Agents</span>
-                </div>
-              </div>
-
-              {/* Analytics - Bottom Left */}
-              <div className="absolute bottom-20 left-0 animate-float float-delay-1 animate-fade-in-left" style={{animationDelay: '0.25s'}}>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
-                  <BarChart3 className="w-4 h-4 text-white" />
-                  <span className="text-xs font-semibold text-white whitespace-nowrap">Analytics</span>
+              <div className="absolute bottom-8 sm:bottom-12 right-0 animate-float float-delay-3 animate-fade-in-right" style={{animationDelay: '0.5s'}}>
+                <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
+                  <BarChart3 className="w-3 h-3 sm:w-4 sm:h-4 text-white shrink-0" />
+                  <span className="text-[10px] sm:text-xs font-semibold text-white whitespace-nowrap">Lead Gen</span>
                 </div>
               </div>
 
               {/* Integrations - Top Left */}
-              <div className="absolute top-20 left-12 animate-float float-delay-3 animate-fade-in-left" style={{animationDelay: '0.45s'}}>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
-                  <Smartphone className="w-4 h-4 text-white" />
-                  <span className="text-xs font-semibold text-white whitespace-nowrap">Integrations</span>
+              <div className="absolute top-8 sm:top-20 left-0 sm:left-12 animate-float float-delay-3 animate-fade-in-left" style={{animationDelay: '0.45s'}}>
+                <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
+                  <Smartphone className="w-3 h-3 sm:w-4 sm:h-4 text-white shrink-0" />
+                  <span className="text-[10px] sm:text-xs font-semibold text-white whitespace-nowrap">Integrations</span>
+                </div>
+              </div>
+
+              {/* AI Agents - Left Center */}
+              <div className="absolute top-1/2 left-0 -translate-y-1/2 animate-float float-delay-2 animate-fade-in-left" style={{animationDelay: '0.35s'}}>
+                <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
+                  <Users className="w-3 h-3 sm:w-4 sm:h-4 text-white shrink-0" />
+                  <span className="text-[10px] sm:text-xs font-semibold text-white whitespace-nowrap">AI Agents</span>
+                </div>
+              </div>
+
+              {/* Analytics - Bottom Left */}
+              <div className="absolute bottom-8 sm:bottom-20 left-0 animate-float float-delay-1 animate-fade-in-left" style={{animationDelay: '0.25s'}}>
+                <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
+                  <BarChart3 className="w-3 h-3 sm:w-4 sm:h-4 text-white shrink-0" />
+                  <span className="text-[10px] sm:text-xs font-semibold text-white whitespace-nowrap">Analytics</span>
                 </div>
               </div>
 
@@ -152,29 +152,6 @@ export default function Hero({ onContact }: Props) {
               <div className="absolute bottom-1/3 right-1/4 w-1 h-1 bg-white rounded-full opacity-50 animate-pulse delay-500"></div>
             </div>
 
-            {/* Mobile badges - simplified layout */}
-            <div className="lg:hidden absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="grid grid-cols-3 gap-2 text-center">
-                <div className="animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-                  <div className="w-8 h-8 rounded-lg border border-white/20 bg-black/60 flex items-center justify-center mx-auto mb-1 animate-pulse">
-                    <MessageCircle className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-[10px] text-white/70 font-semibold">Chat</span>
-                </div>
-                <div className="animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-                  <div className="w-8 h-8 rounded-lg border border-white/20 bg-black/60 flex items-center justify-center mx-auto mb-1 animate-pulse">
-                    <Zap className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-[10px] text-white/70 font-semibold">Auto</span>
-                </div>
-                <div className="animate-fade-in-up" style={{animationDelay: '0.5s'}}>
-                  <div className="w-8 h-8 rounded-lg border border-white/20 bg-black/60 flex items-center justify-center mx-auto mb-1 animate-pulse">
-                    <Users className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-[10px] text-white/70 font-semibold">Agents</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

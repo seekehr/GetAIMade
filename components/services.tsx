@@ -1,6 +1,5 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
 import { MessageCircle, Share2, Smartphone, Users, Gauge, Globe, BarChart3, Zap } from 'lucide-react';
 
 const services = [
@@ -47,58 +46,25 @@ const services = [
 ];
 
 export default function Services() {
-  const [visibleCards, setVisibleCards] = useState<number[]>([]);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const observers = services.map((_, idx) => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setVisibleCards((prev) => [...prev, idx]);
-          }
-        },
-        { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-      );
-
-      if (cardsRef.current[idx]) {
-        observer.observe(cardsRef.current[idx]!);
-      }
-
-      return observer;
-    });
-
-    return () => observers.forEach((obs) => obs.disconnect());
-  }, []);
-
   return (
-    <section id="features" className="py-32 px-4 sm:px-6 lg:px-8 relative bg-black">
+    <section id="features" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 relative bg-black">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header with scroll animation */}
-        <div className="space-y-6 mb-20 border-t border-white/10 pt-10">
-          <p className="text-xs font-semibold text-white/60 uppercase tracking-widest animate-fade-in-up">WHAT WE BUILD</p>
-          <h2 className="text-5xl sm:text-6xl font-black text-white leading-tight animate-fade-in-up" style={{ animationDelay: '0.05s' }}>
+        {/* Section Header */}
+        <div className="space-y-6 mb-16 border-t border-white/10 pt-10">
+          <p className="text-xs font-semibold text-white/60 uppercase tracking-widest">WHAT WE BUILD</p>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
             Powerful AI Solutions For Modern Businesses.
           </h2>
         </div>
 
-        {/* Services Grid - 4 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, idx) => {
             const Icon = service.icon;
-            const isVisible = visibleCards.includes(idx);
             return (
               <div
                 key={idx}
-                ref={(el) => {
-                  cardsRef.current[idx] = el;
-                }}
-                className={`group bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-white/30 rounded-xl transition-all duration-500 hover:shadow-lg hover:shadow-white/20 hover:scale-105 p-6 sm:p-8 ${
-                  isVisible ? 'animate-fade-in-up' : 'opacity-0'
-                }`}
-                style={{
-                  animationDelay: isVisible ? `${idx * 0.08}s` : '0s',
-                }}
+                className="group bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-white/30 rounded-xl transition-all duration-500 hover:shadow-lg hover:shadow-white/20 hover:scale-105 p-6 sm:p-8"
               >
                 <div className="space-y-5 relative">
                   {/* Glow background on hover */}
