@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" font-family="Inter, 'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif">
+  <title>Business directory scraper: crawl job progress, a raw listing cleaned into structured fields, and the deduplicated dataset</title>
+  <style>
+    .b{font-weight:700}
+    .w{fill:#fafafa}.p{fill:#e4e4e7}.s{fill:#a1a1aa}.m{fill:#71717a}.d{fill:#d4d4d8}
+    .mono{font-family:ui-monospace, 'SF Mono', 'Cascadia Code', Consolas, monospace}
+    .cap{font-size:10px;letter-spacing:.08em;font-weight:700;fill:#71717a}
+    .ok{fill:#12251a;stroke:#1f5132}.okt{fill:#4ade80}
+  </style>
+
+  <rect width="960" height="640" rx="16" fill="#0b0b0c"/>
+  <rect x=".5" y=".5" width="959" height="639" rx="15.5" fill="none" stroke="#27272a"/>
+  <path d="M1 44h958" stroke="#27272a"/>
+  <circle cx="24" cy="22" r="6" fill="#3f3f46"/><circle cx="44" cy="22" r="6" fill="#3f3f46"/><circle cx="64" cy="22" r="6" fill="#3f3f46"/>
+  <text x="88" y="27" font-size="13" class="s">Directory Scraper — local business listings</text>
+  <text x="936" y="27" font-size="12" class="m" text-anchor="end">Run #37 · finished in 4m 12s</text>
+
+  <!-- Crawl job -->
+  <rect x="24" y="64" width="360" height="552" rx="12" fill="#111113" stroke="#27272a"/>
+  <text x="44" y="94" font-size="15" class="w b">Crawl job</text>
+  <rect x="288" y="79" width="76" height="22" rx="11" class="ok"/>
+  <text x="326" y="94" font-size="11" class="b okt" text-anchor="middle">Complete</text>
+
+  <rect x="40" y="112" width="104" height="64" rx="8" fill="#18181b" stroke="#27272a"/>
+  <text x="52" y="134" class="cap">PAGES</text>
+  <text x="52" y="162" font-size="20" class="w b">412</text>
+  <rect x="152" y="112" width="104" height="64" rx="8" fill="#18181b" stroke="#27272a"/>
+  <text x="164" y="134" class="cap">LISTINGS</text>
+  <text x="164" y="162" font-size="20" class="w b">3,286</text>
+  <rect x="264" y="112" width="104" height="64" rx="8" fill="#18181b" stroke="#27272a"/>
+  <text x="276" y="134" class="cap">FAILED</text>
+  <text x="276" y="162" font-size="20" class="b" fill="#fbbf24">0</text>
+  <text x="298" y="162" font-size="11" class="m">(3 retried)</text>
+
+  <text x="44" y="204" font-size="12" class="s">Progress</text>
+  <text x="364" y="204" font-size="12" class="s" text-anchor="end">100%</text>
+  <rect x="40" y="212" width="328" height="6" rx="3" fill="#4ade80"/>
+
+  <text x="44" y="250" class="cap">REQUESTS</text>
+  <g font-size="10" class="mono b" text-anchor="middle">
+    <rect x="40" y="262" width="34" height="18" rx="4" class="ok"/><text x="57" y="275" class="okt">200</text>
+    <rect x="40" y="296" width="34" height="18" rx="4" class="ok"/><text x="57" y="309" class="okt">200</text>
+    <rect x="40" y="330" width="34" height="18" rx="4" class="ok"/><text x="57" y="343" class="okt">200</text>
+    <rect x="40" y="364" width="34" height="18" rx="4" fill="#2a2210" stroke="#5c4a17"/><text x="57" y="377" fill="#fbbf24">429</text>
+    <rect x="40" y="398" width="34" height="18" rx="4" class="ok"/><text x="57" y="411" class="okt">200</text>
+    <rect x="40" y="432" width="34" height="18" rx="4" class="ok"/><text x="57" y="445" class="okt">200</text>
+    <rect x="40" y="466" width="34" height="18" rx="4" class="ok"/><text x="57" y="479" class="okt">200</text>
+    <rect x="40" y="500" width="34" height="18" rx="4" class="ok"/><text x="57" y="513" class="okt">200</text>
+  </g>
+  <g font-size="11" class="mono p">
+    <text x="84" y="275">/dentists?page=1</text>
+    <text x="84" y="309">/dentists?page=2</text>
+    <text x="84" y="343">/plumbers?page=1</text>
+    <text x="84" y="377">/plumbers?page=7</text>
+    <text x="84" y="411">/plumbers?page=7</text>
+    <text x="84" y="445">/vets?page=1</text>
+    <text x="84" y="479">/listing/bright-smile-dental</text>
+    <text x="84" y="513">/listing/hartley-plumbing</text>
+  </g>
+  <g font-size="11" class="m" text-anchor="end">
+    <text x="364" y="275">24 listings</text>
+    <text x="364" y="309">24 listings</text>
+    <text x="364" y="343">22 listings</text>
+    <text x="364" y="377" fill="#fbbf24">retry 1/3</text>
+    <text x="364" y="411">22 listings</text>
+    <text x="364" y="445">18 listings</text>
+    <text x="364" y="479">detail</text>
+    <text x="364" y="513">detail</text>
+  </g>
+  <path d="M40 560h328" stroke="#27272a"/>
+  <text x="44" y="588" font-size="11" class="m">Polite crawl: 2 req/s · robots.txt respected</text>
+
+  <!-- Raw listing -->
+  <rect x="408" y="64" width="256" height="236" rx="12" fill="#111113" stroke="#27272a"/>
+  <text x="424" y="90" class="cap">RAW LISTING</text>
+  <text x="648" y="90" font-size="10" class="m mono" text-anchor="end">HTML</text>
+  <path d="M408 102h256" stroke="#27272a"/>
+  <g font-size="10" class="m">
+    <text x="424" y="124">name</text><text x="424" y="164">phone</text><text x="424" y="204">address</text><text x="424" y="244">hours</text>
+  </g>
+  <g font-size="11" class="mono d">
+    <text x="424" y="140">BRIGHT SMILE DENTAL - Family!!</text>
+    <text x="424" y="180">Call us: (555)-201 8890</text>
+    <text x="424" y="220">12 elm st. , ste 4 Springfield</text>
+    <text x="424" y="260">M-F 9-5 / Sat by appt.</text>
+  </g>
+  <text x="424" y="286" font-size="10" class="m">+ 4 more fields</text>
+
+  <circle cx="672" cy="182" r="12" fill="#0b0b0c" stroke="#52525b"/>
+  <path d="M669 177l5 5-5 5" fill="none" stroke="#e4e4e7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Cleaned -->
+  <rect x="680" y="64" width="256" height="236" rx="12" fill="#111113" stroke="#1f5132"/>
+  <text x="696" y="90" class="cap" style="fill:#4ade80">CLEANED</text>
+  <text x="920" y="90" font-size="10" class="m mono" text-anchor="end">JSON</text>
+  <path d="M680 102h256" stroke="#27272a"/>
+  <g font-size="10" class="m">
+    <text x="696" y="124">name</text><text x="696" y="164">phone</text><text x="696" y="204">address</text><text x="696" y="244">hours</text>
+  </g>
+  <g font-size="13" class="w">
+    <text x="696" y="141">Bright Smile Dental</text>
+    <text x="696" y="181">+1 555 201 8890</text>
+    <text x="696" y="221">12 Elm St, Suite 4, Springfield</text>
+    <text x="696" y="261">Mon–Fri 09:00–17:00</text>
+  </g>
+  <text x="696" y="286" font-size="10" class="b" fill="#a78bfa">category: Dentist · inferred by AI</text>
+
+  <!-- Dataset -->
+  <rect x="408" y="316" width="528" height="300" rx="12" fill="#111113" stroke="#27272a"/>
+  <text x="428" y="344" font-size="15" class="w b">Clean dataset</text>
+  <text x="916" y="344" font-size="12" class="m" text-anchor="end">3,286 rows</text>
+  <rect x="424" y="360" width="496" height="24" fill="#18181b"/>
+  <rect x="424" y="384" width="496" height="26" fill="#22c55e" fill-opacity=".1"/>
+  <path d="M424 384h496M424 410h496M424 436h496M424 462h496M424 488h496M424 514h496M600 360v180M700 360v180M800 360v180" stroke="#27272a"/>
+  <rect x="424" y="360" width="496" height="180" fill="none" stroke="#27272a"/>
+  <g font-size="11" class="s b">
+    <text x="432" y="376">Name</text><text x="608" y="376">Category</text><text x="708" y="376">City</text><text x="808" y="376">Phone</text>
+  </g>
+  <g font-size="12" class="d">
+    <text x="432" y="401" class="w b">Bright Smile Dental</text><text x="608" y="401">Dentist</text><text x="708" y="401">Springfield</text><text x="808" y="401">+1 555 201 8890</text>
+    <text x="432" y="427">Hartley Plumbing Co.</text><text x="608" y="427">Plumber</text><text x="708" y="427">Springfield</text><text x="808" y="427">+1 555 318 0042</text>
+    <text x="432" y="453">Oak &amp; Pine Dental</text><text x="608" y="453">Dentist</text><text x="708" y="453">Riverton</text><text x="808" y="453">+1 555 774 1203</text>
+    <text x="432" y="479">Northside Auto Repair</text><text x="608" y="479">Mechanic</text><text x="708" y="479">Riverton</text><text x="808" y="479">+1 555 640 2291</text>
+    <text x="432" y="505">Greenleaf Vet Clinic</text><text x="608" y="505">Veterinarian</text><text x="708" y="505">Lakeview</text><text x="808" y="505">+1 555 902 7718</text>
+    <text x="432" y="531">Lakeview Plumbing</text><text x="608" y="531">Plumber</text><text x="708" y="531">Lakeview</text><text x="808" y="531">+1 555 118 3390</text>
+  </g>
+  <circle cx="432" cy="592" r="3.5" fill="#4ade80"/>
+  <text x="442" y="596" font-size="11" fill="#4ade80">41 duplicates merged · 12 missing phones flagged</text>
+  <rect x="808" y="581" width="44" height="22" rx="6" fill="none" stroke="#3f3f46"/><text x="830" y="596" font-size="11" class="p" text-anchor="middle">CSV</text>
+  <rect x="858" y="581" width="62" height="22" rx="6" fill="none" stroke="#3f3f46"/><text x="889" y="596" font-size="11" class="p" text-anchor="middle">Sheets</text>
+</svg>

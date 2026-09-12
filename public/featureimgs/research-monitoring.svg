@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" font-family="Inter, 'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif">
+  <title>Competitor change monitor: watched pages with change status, a pricing-page diff, and an AI summary posted to Slack</title>
+  <style>
+    .b{font-weight:700}
+    .w{fill:#fafafa}.p{fill:#e4e4e7}.s{fill:#a1a1aa}.m{fill:#71717a}.d{fill:#d4d4d8}
+    .mono{font-family:ui-monospace, 'SF Mono', 'Cascadia Code', Consolas, monospace}
+    .cap{font-size:10px;letter-spacing:.08em;font-weight:700;fill:#71717a}
+    .chg{fill:#2a2210;stroke:#5c4a17}.chgt{fill:#fbbf24}
+    .new{fill:#111d2e;stroke:#1e3a5f}.newt{fill:#60a5fa}
+    .no{fill:#1c1c1f;stroke:#3f3f46}.not{fill:#71717a}
+    .up{fill:#12251a;stroke:#1f5132}.upt{fill:#4ade80}
+  </style>
+
+  <rect width="960" height="640" rx="16" fill="#0b0b0c"/>
+  <rect x=".5" y=".5" width="959" height="639" rx="15.5" fill="none" stroke="#27272a"/>
+  <path d="M1 44h958" stroke="#27272a"/>
+  <circle cx="24" cy="22" r="6" fill="#3f3f46"/><circle cx="44" cy="22" r="6" fill="#3f3f46"/><circle cx="64" cy="22" r="6" fill="#3f3f46"/>
+  <text x="88" y="27" font-size="13" class="s">Change Monitor — 3 competitors · 18 pages</text>
+  <text x="936" y="27" font-size="12" class="m" text-anchor="end">Checked daily at 06:00 · last run 2m ago</text>
+
+  <!-- Watched pages -->
+  <rect x="24" y="64" width="320" height="552" rx="12" fill="#111113" stroke="#27272a"/>
+  <text x="44" y="92" class="cap">WATCHED PAGES · 18</text>
+  <rect x="32" y="104" width="304" height="44" rx="8" fill="#1c1c1f"/>
+
+  <g font-size="12" class="p b" text-anchor="middle">
+    <rect x="44" y="114" width="24" height="24" rx="6" fill="#27272a"/><text x="56" y="130">N</text>
+    <rect x="44" y="158" width="24" height="24" rx="6" fill="#27272a"/><text x="56" y="174">N</text>
+    <rect x="44" y="202" width="24" height="24" rx="6" fill="#27272a"/><text x="56" y="218">N</text>
+    <rect x="44" y="246" width="24" height="24" rx="6" fill="#27272a"/><text x="56" y="262">L</text>
+    <rect x="44" y="290" width="24" height="24" rx="6" fill="#27272a"/><text x="56" y="306">L</text>
+    <rect x="44" y="334" width="24" height="24" rx="6" fill="#27272a"/><text x="56" y="350">L</text>
+    <rect x="44" y="378" width="24" height="24" rx="6" fill="#27272a"/><text x="56" y="394">C</text>
+    <rect x="44" y="422" width="24" height="24" rx="6" fill="#27272a"/><text x="56" y="438">C</text>
+    <rect x="44" y="466" width="24" height="24" rx="6" fill="#27272a"/><text x="56" y="482">C</text>
+  </g>
+  <g font-size="13" class="w b">
+    <text x="78" y="124">Northbeam</text><text x="78" y="168">Northbeam</text><text x="78" y="212">Northbeam</text>
+    <text x="78" y="256">Lumina</text><text x="78" y="300">Lumina</text><text x="78" y="344">Lumina</text>
+    <text x="78" y="388">Corvid</text><text x="78" y="432">Corvid</text><text x="78" y="476">Corvid</text>
+  </g>
+  <g font-size="11" class="m">
+    <text x="78" y="140">Pricing</text><text x="78" y="184">Changelog</text><text x="78" y="228">Careers</text>
+    <text x="78" y="272">Pricing</text><text x="78" y="316">Blog</text><text x="78" y="360">Integrations</text>
+    <text x="78" y="404">Pricing</text><text x="78" y="448">Careers</text><text x="78" y="492">Docs</text>
+  </g>
+  <g font-size="10" class="b" text-anchor="middle">
+    <rect x="258" y="115" width="66" height="22" rx="11" class="chg"/><text x="291" y="130" class="chgt">Changed</text>
+    <rect x="254" y="159" width="70" height="22" rx="11" class="new"/><text x="289" y="174" class="newt">New post</text>
+    <rect x="248" y="203" width="76" height="22" rx="11" class="no"/><text x="286" y="218" class="not">No change</text>
+    <rect x="248" y="247" width="76" height="22" rx="11" class="no"/><text x="286" y="262" class="not">No change</text>
+    <rect x="254" y="291" width="70" height="22" rx="11" class="new"/><text x="289" y="306" class="newt">New post</text>
+    <rect x="258" y="335" width="66" height="22" rx="11" class="chg"/><text x="291" y="350" class="chgt">Changed</text>
+    <rect x="248" y="379" width="76" height="22" rx="11" class="no"/><text x="286" y="394" class="not">No change</text>
+    <rect x="258" y="423" width="66" height="22" rx="11" class="up"/><text x="291" y="438" class="upt">+4 roles</text>
+    <rect x="248" y="467" width="76" height="22" rx="11" class="no"/><text x="286" y="482" class="not">No change</text>
+  </g>
+  <text x="44" y="528" font-size="12" class="m">+ 9 more pages</text>
+  <path d="M40 560h288" stroke="#27272a"/>
+  <text x="44" y="588" font-size="11" class="m">Text + visual diff · snapshots kept 90 days</text>
+
+  <!-- Diff -->
+  <rect x="368" y="64" width="568" height="300" rx="12" fill="#111113" stroke="#27272a"/>
+  <text x="388" y="94" font-size="15" class="w b">Northbeam · Pricing</text>
+  <text x="548" y="94" font-size="11" class="m mono">northbeam.io/pricing</text>
+  <text x="916" y="94" font-size="11" class="b chgt" text-anchor="end">Changed since yesterday</text>
+  <path d="M368 110h568" stroke="#27272a"/>
+  <text x="388" y="134" class="cap">FIELD</text>
+  <text x="520" y="134" class="cap">YESTERDAY</text>
+  <text x="706" y="134" class="cap">TODAY</text>
+
+  <g font-size="13">
+    <text x="388" y="166" class="s">Starter plan</text>
+    <rect x="512" y="147" width="156" height="28" rx="6" fill="#2a1515"/>
+    <text x="524" y="166" fill="#fca5a5" text-decoration="line-through">$29 / month</text>
+    <text x="682" y="166" class="m">→</text>
+    <rect x="698" y="147" width="156" height="28" rx="6" fill="#12251a"/>
+    <text x="710" y="166" class="b" fill="#86efac">$39 / month</text>
+
+    <text x="388" y="206" class="s">Team plan</text>
+    <rect x="512" y="187" width="156" height="28" rx="6" fill="#2a1515"/>
+    <text x="524" y="206" fill="#fca5a5" text-decoration="line-through">$79 / month</text>
+    <text x="682" y="206" class="m">→</text>
+    <rect x="698" y="187" width="156" height="28" rx="6" fill="#12251a"/>
+    <text x="710" y="206" class="b" fill="#86efac">$99 / month</text>
+
+    <text x="388" y="246" class="s">Free trial</text>
+    <rect x="512" y="227" width="156" height="28" rx="6" fill="#2a1515"/>
+    <text x="524" y="246" fill="#fca5a5" text-decoration="line-through">30 days</text>
+    <text x="682" y="246" class="m">→</text>
+    <rect x="698" y="227" width="156" height="28" rx="6" fill="#12251a"/>
+    <text x="710" y="246" class="b" fill="#86efac">14 days</text>
+
+    <text x="388" y="286" class="s">Annual billing</text>
+    <rect x="512" y="267" width="156" height="28" rx="6" fill="#1c1c1f"/>
+    <text x="524" y="286" class="m">not offered</text>
+    <text x="682" y="286" class="m">→</text>
+    <rect x="698" y="267" width="156" height="28" rx="6" fill="#12251a"/>
+    <text x="710" y="286" class="b" fill="#86efac">2 months free</text>
+  </g>
+  <path d="M388 316h528" stroke="#27272a"/>
+  <text x="388" y="342" font-size="11" class="m">4 changes detected · screenshot + HTML snapshot saved</text>
+  <text x="916" y="342" font-size="11" fill="#60a5fa" text-anchor="end">Compare snapshots ↗</text>
+
+  <!-- Slack summary -->
+  <rect x="368" y="380" width="568" height="236" rx="12" fill="#111113" stroke="#27272a"/>
+  <rect x="388" y="396" width="22" height="22" rx="6" fill="#27272a"/>
+  <text x="399" y="412" font-size="14" class="w b" text-anchor="middle">#</text>
+  <text x="420" y="412" font-size="14" class="w b">competitor-watch</text>
+  <text x="916" y="412" font-size="12" class="m" text-anchor="end">Slack</text>
+  <path d="M368 428h568" stroke="#27272a"/>
+  <rect x="388" y="442" width="32" height="32" rx="8" fill="#fafafa"/>
+  <text x="404" y="463" font-size="15" class="b" fill="#0b0b0c" text-anchor="middle">M</text>
+  <text x="432" y="454" font-size="14" class="w b">Monitor Bot</text>
+  <rect x="524" y="443" width="30" height="15" rx="3" fill="#27272a"/>
+  <text x="539" y="454" font-size="9" class="s b" text-anchor="middle">APP</text>
+  <text x="562" y="454" font-size="12" class="m">6:02 AM</text>
+  <text x="432" y="478" font-size="13" class="p">3 competitors changed something yesterday:</text>
+  <g font-size="13" class="d">
+    <text x="432" y="500">• Northbeam: Starter $29 → $39, free trial cut to 14 days.</text>
+    <text x="432" y="521">• Lumina launched a HubSpot integration (blog + integrations page).</text>
+    <text x="432" y="542">• Corvid posted 4 sales roles in Berlin, likely EU expansion.</text>
+  </g>
+  <text x="432" y="566" font-size="13" class="p"><tspan class="w b">Suggested:</tspan> refresh our pricing comparison page.</text>
+  <rect x="432" y="578" width="116" height="26" rx="6" fill="none" stroke="#3f3f46"/>
+  <text x="490" y="595" font-size="12" class="p" text-anchor="middle">Open full brief</text>
+  <rect x="556" y="578" width="88" height="26" rx="6" fill="none" stroke="#3f3f46"/>
+  <text x="600" y="595" font-size="12" class="p" text-anchor="middle">View diffs</text>
+</svg>

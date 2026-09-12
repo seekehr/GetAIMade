@@ -2,92 +2,116 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { ArrowRight, ArrowUpRight, Github, Inbox, FileText, Search, Workflow, BookOpen, Target } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Github, Globe, ScanText, BookOpen, Radar, Building2, Workflow } from 'lucide-react';
 
-const projects = [
+const services = [
   {
-    icon: Inbox,
-    category: 'Personal workflow automation',
-    title: 'Inbox triage system',
+    icon: Globe,
+    title: 'AI-Powered Web Scraping',
     description:
-      'Every incoming email is classified, summarized in one line, and routed. Urgent items land in a Slack digest, action items go straight onto a Notion task board.',
-    flow: ['Classify', 'Summarize', 'Route to Slack + Notion'],
+      'Scrape websites, directories, listings, docs, or public data sources, then clean and structure the data automatically.',
+    example: {
+      name: 'Business directory scraper',
+      summary:
+        'Crawls every listing page of a local-business directory and turns it into one clean, deduplicated dataset.',
+    },
+    flow: ['Crawl', 'Parse', 'Clean & dedupe', 'Export'],
     outcome:
-      'The inbox only surfaces what actually needs a reply. Everything else is already filed, archived, or drafted.',
-    stack: ['Gmail API', 'LLM classification', 'Slack', 'Notion'],
-    image: '/featureimgs/inbox-triage.svg',
+      'Hundreds of inconsistent listing pages become a spreadsheet you can actually use: normalized phones, addresses and categories, no duplicates.',
+    stack: ['Playwright', 'Python', 'LLM cleanup', 'Postgres', 'CSV / Sheets'],
+    image: '/featureimgs/web-scraping.svg',
     repo: 'https://github.com/seekehr/',
-    alt: 'Inbox triage dashboard: emails tagged Urgent, Invoice, Client and Newsletter with one-line AI summaries, routed into a Slack digest and a Notion task list',
+    alt: 'Directory scraper: crawl job progress and request log, a messy raw listing cleaned into structured fields, and the deduplicated dataset table',
   },
   {
-    icon: FileText,
-    category: 'AI document workflows',
-    title: 'Invoice extraction pipeline',
+    icon: ScanText,
+    title: 'Smart Data Extraction',
     description:
-      'Drop in a PDF invoice and the vendor, dates, line items, tax and total are pulled into a strict schema, confidence-checked, and appended to the AP spreadsheet.',
-    flow: ['Parse PDF', 'Extract fields', 'Validate', 'Append to sheet'],
+      'Use AI to pull specific information from messy pages, PDFs, articles, or semi-structured content instead of relying only on brittle CSS selectors.',
+    example: {
+      name: 'Product spec extractor',
+      summary:
+        'Pulls the same spec fields from spec tables, marketing copy and PDF datasheets, whatever the layout.',
+    },
+    flow: ['Fetch page or PDF', 'Extract to schema', 'Validate'],
     outcome:
-      'No more retyping invoices. Low-confidence fields get flagged for a human instead of silently going wrong.',
-    stack: ['OCR', 'LLM extraction', 'JSON schema', 'Excel / Sheets'],
-    image: '/featureimgs/invoice-extraction.svg',
+      'One schema across wildly different layouts, with units normalized, and a site redesign doesn’t break it the way a CSS selector would.',
+    stack: ['LLM extraction', 'JSON schema', 'PDF parsing', 'Validation'],
+    image: '/featureimgs/smart-extraction.svg',
     repo: 'https://github.com/seekehr/',
-    alt: 'A PDF invoice with highlighted fields next to the extracted key-value fields with confidence scores and the new row in an invoices spreadsheet',
-  },
-  {
-    icon: Search,
-    category: 'Research automation',
-    title: 'Competitor research agent',
-    description:
-      'Give it a question. It plans the searches, collects and reads the sources, cross-checks the facts, and writes a brief where every claim is cited.',
-    flow: ['Search', 'Read', 'Cross-check', 'Write report'],
-    outcome:
-      'A cited competitor brief in minutes instead of an afternoon of open tabs, and every claim links back to its source.',
-    stack: ['Web search', 'Scraping', 'LLM agents', 'Notion / PDF export'],
-    image: '/featureimgs/research-agent.svg',
-    repo: 'https://github.com/seekehr/',
-    alt: 'Research agent run showing completed steps and collected sources beside a generated competitor report with a comparison table and citations',
-  },
-  {
-    icon: Workflow,
-    category: 'API integrations',
-    title: 'CRM ↔ Slack ↔ Sheets sync',
-    description:
-      'A small sync service listening to CRM webhooks. When a deal moves, the team hears about it in Slack and the pipeline sheet updates itself. Edits in the sheet flow back.',
-    flow: ['Webhook', 'Queue', 'Sync both ways'],
-    outcome:
-      'One source of truth. Nobody copy-pastes deals between tools, and failed syncs retry instead of disappearing.',
-    stack: ['HubSpot API', 'Slack API', 'Google Sheets API', 'Webhooks'],
-    image: '/featureimgs/crm-slack-sheets-sync.svg',
-    repo: 'https://github.com/seekehr/',
-    alt: 'System diagram of HubSpot, a sync service, Slack and Google Sheets, with a Slack deal-won alert and the matching updated row in the pipeline sheet',
+    alt: 'A spec table, a marketing paragraph and a PDF datasheet with highlighted values, all extracted into one product specs table and a JSON record',
   },
   {
     icon: BookOpen,
-    category: 'Custom RAG',
-    title: 'Internal knowledge assistant',
+    title: 'Custom RAG Systems',
     description:
-      'A chat assistant over your Drive, Notion wiki and help center. Answers cite the exact document and section, and respect existing permissions.',
-    flow: ['Index docs', 'Retrieve', 'Answer with citations'],
+      'Turn scraped websites, documents, or internal knowledge into an AI assistant that answers questions using the collected sources.',
+    example: {
+      name: 'Product docs assistant',
+      summary:
+        'An assistant built on a crawled docs site, API reference and changelog that answers with links to the exact page.',
+    },
+    flow: ['Crawl docs', 'Chunk & embed', 'Answer with citations'],
     outcome:
-      'Staff get answers they can verify in one click, instead of pinging the one person who knows.',
-    stack: ['Embeddings', 'Vector DB', 'RAG', 'Google Drive + Notion'],
-    image: '/featureimgs/knowledge-assistant.svg',
+      'Users and support staff get answers they can verify in one click, and the index refreshes itself when the docs change.',
+    stack: ['Crawler', 'Embeddings', 'Vector DB', 'RAG'],
+    image: '/featureimgs/rag-docs-assistant.svg',
     repo: 'https://github.com/seekehr/',
-    alt: 'Knowledge assistant chat answering a refund-policy question with numbered citations and source cards from Google Drive and a Notion wiki',
+    alt: 'Docs assistant chat answering how to rotate an API key, with numbered citations and source cards linking to the crawled documentation pages',
   },
   {
-    icon: Target,
-    category: 'Lead automation',
-    title: 'Lead qualification pipeline',
+    icon: Radar,
+    title: 'Research & Monitoring Systems',
     description:
-      'New leads are enriched with company data and buying signals, scored against your ideal customer profile, and the good ones get a personalized follow-up drafted for approval.',
-    flow: ['Enrich', 'Score', 'Draft follow-up'],
+      'Continuously collect information from selected sources, detect changes, summarize updates, compare competitors, or generate research briefs.',
+    example: {
+      name: 'Competitor change monitor',
+      summary:
+        'Snapshots competitor pricing, changelog and careers pages every day, detects what changed, and posts a short summary.',
+    },
+    flow: ['Snapshot', 'Diff', 'Summarize', 'Alert'],
     outcome:
-      'Sales spends its time on the leads worth it, and every qualified lead gets a relevant reply the same day.',
-    stack: ['Enrichment APIs', 'LLM scoring', 'Gmail', 'HubSpot'],
-    image: '/featureimgs/lead-qualification.svg',
+      'You hear about a competitor’s price change or launch the day it happens, without anyone checking their site.',
+    stack: ['Scheduled crawls', 'Text + visual diff', 'LLM summaries', 'Slack / email'],
+    image: '/featureimgs/research-monitoring.svg',
     repo: 'https://github.com/seekehr/',
-    alt: 'Three-stage lead pipeline: incoming leads, an enriched lead with a fit score of 86, and an auto-drafted personalized follow-up email awaiting approval',
+    alt: 'Change monitor listing watched competitor pages, a pricing-page diff showing old and new prices, and an AI summary posted to a Slack channel',
+  },
+  {
+    icon: Building2,
+    title: 'Lead & Company Intelligence',
+    description:
+      'Collect public business data, enrich it, classify companies, score leads, and generate useful summaries or personalized outreach inputs.',
+    example: {
+      name: 'Company intelligence pipeline',
+      summary:
+        'Collects companies from public directories and job boards, enriches and scores them, and writes a short brief with outreach angles for each.',
+    },
+    flow: ['Collect', 'Enrich & classify', 'Score', 'Brief'],
+    outcome:
+      'Sales gets a ranked list of companies that fit, each with a summary and a concrete reason to reach out now.',
+    stack: ['Public data sources', 'Enrichment', 'LLM classification', 'CRM export'],
+    image: '/featureimgs/company-intelligence.svg',
+    repo: 'https://github.com/seekehr/',
+    alt: 'Three-stage pipeline: companies collected from public sources, an enriched company with a fit score of 86, and an AI-generated brief with outreach angles',
+  },
+  {
+    icon: Workflow,
+    title: 'Custom Data Pipelines & APIs',
+    description:
+      'Build the backend that ties everything together: crawling, queues, databases, deduplication, scheduled jobs, AI processing, APIs, and exports.',
+    example: {
+      name: 'Scraping pipeline & API',
+      summary:
+        'The backend behind the systems above: scheduled crawls, a job queue, AI processing, deduplication, a database and a clean API.',
+    },
+    flow: ['Schedule', 'Crawl', 'Process', 'Store', 'Serve'],
+    outcome:
+      'Data arrives on schedule, failed jobs retry on their own, duplicates never reach the database, and your apps read it all through one API.',
+    stack: ['Python / Node', 'Redis queue', 'Postgres', 'REST API', 'Cron'],
+    image: '/featureimgs/data-pipeline.svg',
+    repo: 'https://github.com/seekehr/',
+    alt: 'Pipeline architecture from scheduler to crawlers, queue, AI processing, dedupe and Postgres feeding an API, exports and webhooks, with job runs and an API response',
   },
 ];
 
@@ -96,7 +120,7 @@ export default function Features() {
   const itemsRef = React.useRef<(HTMLElement | null)[]>([]);
 
   React.useEffect(() => {
-    const observers = projects.map((_, idx) => {
+    const observers = services.map((_, idx) => {
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
@@ -127,20 +151,21 @@ export default function Features() {
             Things I&apos;ve Built.
           </h2>
           <p className="text-lg text-white/70 leading-relaxed">
-            One real system for each service: what it does, what it looks like, and what changed once it was running.
+            I build systems that collect data from websites and documents and turn it into useful AI-powered answers,
+            reports, and workflows. Here&apos;s one example of each.
           </p>
         </div>
 
-        {/* Projects */}
+        {/* Services */}
         <div className="space-y-24 lg:space-y-36">
-          {projects.map((project, idx) => {
-            const Icon = project.icon;
+          {services.map((service, idx) => {
+            const Icon = service.icon;
             const reversed = idx % 2 === 1;
             const isVisible = visibleItems.includes(idx);
 
             return (
               <article
-                key={project.title}
+                key={service.title}
                 ref={(el) => {
                   itemsRef.current[idx] = el;
                 }}
@@ -148,7 +173,7 @@ export default function Features() {
                   isVisible ? 'animate-fade-in-up' : 'opacity-0'
                 }`}
               >
-                {/* Category → project */}
+                {/* Service → example project */}
                 <div
                   className={`space-y-5 lg:col-span-5 lg:row-start-1 lg:self-end ${
                     reversed ? 'lg:col-start-8' : 'lg:col-start-1'
@@ -157,25 +182,27 @@ export default function Features() {
                   <div className="flex items-center gap-3">
                     <span className="text-sm font-mono text-white/40">{String(idx + 1).padStart(2, '0')}</span>
                     <span className="h-px w-8 bg-white/20" />
-                    <span className="flex items-center gap-2 text-xs font-semibold text-white/60 uppercase tracking-widest">
-                      <Icon className="w-4 h-4" strokeWidth={1.75} />
-                      {project.category}
-                    </span>
+                    <Icon className="w-4 h-4 text-white/60" strokeWidth={1.75} />
                   </div>
 
-                  <h3 className="text-3xl sm:text-4xl font-black text-white leading-tight">{project.title}</h3>
+                  <h3 className="text-3xl sm:text-4xl font-black text-white leading-tight">{service.title}</h3>
 
-                  <p className="text-base sm:text-lg text-white/70 leading-relaxed">{project.description}</p>
+                  <p className="text-base sm:text-lg text-white/70 leading-relaxed">{service.description}</p>
 
-                  <div className="flex flex-wrap items-center gap-2">
-                    {project.flow.map((step, i) => (
-                      <React.Fragment key={step}>
-                        {i > 0 && <ArrowRight className="w-3.5 h-3.5 text-white/30" />}
-                        <span className="px-3 py-1 rounded-full border border-white/15 bg-white/[0.03] text-xs text-white/80">
-                          {step}
-                        </span>
-                      </React.Fragment>
-                    ))}
+                  <div className="space-y-3 pt-2">
+                    <p className="text-xs font-semibold text-white/50 uppercase tracking-widest">Example</p>
+                    <p className="text-xl font-bold text-white">{service.example.name}</p>
+                    <p className="text-sm sm:text-base text-white/60 leading-relaxed">{service.example.summary}</p>
+                    <div className="flex flex-wrap items-center gap-2 pt-1">
+                      {service.flow.map((step, i) => (
+                        <React.Fragment key={step}>
+                          {i > 0 && <ArrowRight className="w-3.5 h-3.5 text-white/30" />}
+                          <span className="px-3 py-1 rounded-full border border-white/15 bg-white/[0.03] text-xs text-white/80">
+                            {step}
+                          </span>
+                        </React.Fragment>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
@@ -189,8 +216,8 @@ export default function Features() {
                     <div className="absolute -inset-4 bg-gradient-to-br from-white/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl" />
                     <div className="relative rounded-2xl border border-white/10 group-hover:border-white/30 bg-gradient-to-br from-white/5 to-white/[0.02] p-2 sm:p-3 transition-colors duration-500">
                       <Image
-                        src={project.image}
-                        alt={project.alt}
+                        src={service.image}
+                        alt={service.alt}
                         width={960}
                         height={640}
                         className="w-full h-auto rounded-xl"
@@ -207,11 +234,11 @@ export default function Features() {
                 >
                   <div className="border-l-2 border-white/40 pl-5 py-1">
                     <p className="text-xs font-semibold text-white/50 uppercase tracking-widest mb-2">Outcome</p>
-                    <p className="text-white font-medium leading-relaxed">{project.outcome}</p>
+                    <p className="text-white font-medium leading-relaxed">{service.outcome}</p>
                   </div>
-                  <p className="text-sm text-white/40 font-mono">{project.stack.join(' · ')}</p>
+                  <p className="text-sm text-white/40 font-mono">{service.stack.join(' · ')}</p>
                   <a
-                    href={project.repo}
+                    href={service.repo}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group/repo flex items-center justify-between gap-4 pt-5 border-t border-white/10"
@@ -221,7 +248,7 @@ export default function Features() {
                       Example Project
                     </span>
                     <span className="flex items-center gap-1 text-sm font-mono text-white/70 group-hover/repo:text-white transition-colors">
-                      {project.repo.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                      {service.repo.replace(/^https?:\/\//, '').replace(/\/$/, '')}
                       <ArrowUpRight className="w-4 h-4 group-hover/repo:translate-x-0.5 group-hover/repo:-translate-y-0.5 transition-transform" />
                     </span>
                   </a>

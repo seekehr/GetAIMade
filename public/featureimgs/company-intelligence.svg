@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" font-family="Inter, 'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif">
+  <title>Company intelligence pipeline: companies collected from public sources, an enriched and scored company, and an AI brief with outreach angles</title>
+  <style>
+    .b{font-weight:700}
+    .w{fill:#fafafa}.p{fill:#e4e4e7}.s{fill:#a1a1aa}.m{fill:#71717a}.d{fill:#d4d4d8}
+    .cap{font-size:10px;letter-spacing:.08em;font-weight:700;fill:#71717a}
+    .chip{fill:#1c1c1f;stroke:#3f3f46}
+  </style>
+
+  <rect width="960" height="640" rx="16" fill="#0b0b0c"/>
+  <rect x=".5" y=".5" width="959" height="639" rx="15.5" fill="none" stroke="#27272a"/>
+  <path d="M1 44h958" stroke="#27272a"/>
+  <circle cx="24" cy="22" r="6" fill="#3f3f46"/><circle cx="44" cy="22" r="6" fill="#3f3f46"/><circle cx="64" cy="22" r="6" fill="#3f3f46"/>
+  <text x="88" y="27" font-size="13" class="s">Company Intelligence — B2B logistics, EU</text>
+  <text x="936" y="27" font-size="12" class="m" text-anchor="end">Today · 214 collected · 37 good fits · 37 briefs</text>
+
+  <rect x="24" y="64" width="288" height="552" rx="12" fill="#111113" stroke="#27272a"/>
+  <rect x="336" y="64" width="288" height="552" rx="12" fill="#111113" stroke="#27272a"/>
+  <rect x="648" y="64" width="288" height="552" rx="12" fill="#111113" stroke="#27272a"/>
+
+  <circle cx="46" cy="89" r="10" fill="#27272a"/><text x="46" y="93" font-size="11" class="w b" text-anchor="middle">1</text>
+  <text x="64" y="94" font-size="14" class="w b">Collected</text>
+  <text x="292" y="94" font-size="12" class="m" text-anchor="end">214</text>
+  <circle cx="358" cy="89" r="10" fill="#27272a"/><text x="358" y="93" font-size="11" class="w b" text-anchor="middle">2</text>
+  <text x="376" y="94" font-size="14" class="w b">Enriched &amp; classified</text>
+  <text x="604" y="94" font-size="12" class="m" text-anchor="end">214</text>
+  <circle cx="670" cy="89" r="10" fill="#27272a"/><text x="670" y="93" font-size="11" class="w b" text-anchor="middle">3</text>
+  <text x="688" y="94" font-size="14" class="w b">Brief &amp; outreach inputs</text>
+  <text x="916" y="94" font-size="12" class="m" text-anchor="end">37</text>
+  <path d="M24 110h288M336 110h288M648 110h288" stroke="#27272a"/>
+
+  <!-- Collected companies -->
+  <rect x="40" y="124" width="256" height="80" rx="10" fill="#18181b" stroke="#a1a1aa"/>
+  <text x="56" y="152" font-size="14" class="w b">Fleetgrid</text>
+  <text x="280" y="152" font-size="11" class="m" text-anchor="end">Berlin</text>
+  <text x="56" y="172" font-size="12" class="m">fleetgrid.io</text>
+  <rect x="56" y="180" width="72" height="18" rx="9" class="chip"/><text x="92" y="193" font-size="10" class="s" text-anchor="middle">Job board</text>
+
+  <rect x="40" y="216" width="256" height="80" rx="10" fill="#141416" stroke="#27272a"/>
+  <text x="56" y="244" font-size="14" class="w b">Parcelwise</text>
+  <text x="280" y="244" font-size="11" class="m" text-anchor="end">Rotterdam</text>
+  <text x="56" y="264" font-size="12" class="m">parcelwise.co</text>
+  <rect x="56" y="272" width="68" height="18" rx="9" class="chip"/><text x="90" y="285" font-size="10" class="s" text-anchor="middle">Directory</text>
+
+  <rect x="40" y="308" width="256" height="80" rx="10" fill="#141416" stroke="#27272a"/>
+  <text x="56" y="336" font-size="14" class="w b">Haulr</text>
+  <text x="280" y="336" font-size="11" class="m" text-anchor="end">Lyon</text>
+  <text x="56" y="356" font-size="12" class="m">haulr.eu</text>
+  <rect x="56" y="364" width="62" height="18" rx="9" class="chip"/><text x="87" y="377" font-size="10" class="s" text-anchor="middle">Website</text>
+
+  <rect x="40" y="400" width="256" height="80" rx="10" fill="#141416" stroke="#27272a"/>
+  <text x="56" y="428" font-size="14" class="w b">Kargo Labs</text>
+  <text x="280" y="428" font-size="11" class="m" text-anchor="end">Warsaw</text>
+  <text x="56" y="448" font-size="12" class="m">kargolabs.com</text>
+  <rect x="56" y="456" width="52" height="18" rx="9" class="chip"/><text x="82" y="469" font-size="10" class="s" text-anchor="middle">News</text>
+
+  <g opacity=".55">
+    <rect x="40" y="492" width="256" height="80" rx="10" fill="#141416" stroke="#27272a"/>
+    <text x="56" y="520" font-size="14" class="w b">Tranzit</text>
+    <text x="280" y="520" font-size="11" class="m" text-anchor="end">Aarhus</text>
+    <text x="56" y="540" font-size="12" class="m">tranzit.dk</text>
+    <rect x="56" y="548" width="68" height="18" rx="9" class="chip"/><text x="90" y="561" font-size="10" class="s" text-anchor="middle">Directory</text>
+  </g>
+  <text x="56" y="598" font-size="12" class="m">+ 209 more today</text>
+
+  <circle cx="324" cy="164" r="11" fill="#0b0b0c" stroke="#52525b"/>
+  <path d="M321 159l5 5-5 5" fill="none" stroke="#e4e4e7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="636" cy="164" r="11" fill="#0b0b0c" stroke="#52525b"/>
+  <path d="M633 159l5 5-5 5" fill="none" stroke="#e4e4e7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Enriched company -->
+  <rect x="352" y="124" width="256" height="348" rx="10" fill="#18181b" stroke="#a1a1aa"/>
+  <text x="368" y="152" font-size="15" class="w b">Fleetgrid</text>
+  <text x="368" y="170" font-size="12" class="s">Route planning SaaS for fleets</text>
+  <path d="M368 184h224" stroke="#27272a"/>
+  <text x="368" y="206" class="cap">INDUSTRY</text>
+  <text x="368" y="224" font-size="13" class="p">Logistics software · B2B SaaS</text>
+  <text x="368" y="250" class="cap">SIZE &amp; STAGE</text>
+  <text x="368" y="268" font-size="13" class="p">45–60 employees · Series A</text>
+  <text x="368" y="294" class="cap">HIRING SIGNALS</text>
+  <text x="368" y="312" font-size="13" class="p">6 open roles · 3 in sales</text>
+  <text x="368" y="338" class="cap">TECH STACK</text>
+  <text x="368" y="356" font-size="13" class="p">HubSpot, Intercom, AWS</text>
+  <path d="M368 374h224" stroke="#27272a"/>
+  <text x="368" y="398" class="cap">FIT SCORE</text>
+  <text x="368" y="438" font-size="34" class="w b">86</text>
+  <text x="414" y="438" font-size="14" class="m">/100</text>
+  <rect x="516" y="416" width="76" height="24" rx="12" fill="#12251a" stroke="#1f5132"/>
+  <text x="554" y="432" font-size="11" class="b" fill="#4ade80" text-anchor="middle">Good fit</text>
+  <rect x="368" y="452" width="224" height="6" rx="3" fill="#27272a"/>
+  <rect x="368" y="452" width="193" height="6" rx="3" fill="#4ade80"/>
+
+  <rect x="352" y="488" width="256" height="52" rx="10" fill="#141416" stroke="#27272a"/>
+  <text x="368" y="510" font-size="13" class="w b">Parcelwise</text>
+  <text x="368" y="528" font-size="11" class="m">Courier marketplace · 20–30</text>
+  <rect x="520" y="503" width="72" height="22" rx="11" fill="#2a2210" stroke="#5c4a17"/>
+  <text x="556" y="518" font-size="11" class="b" fill="#fbbf24" text-anchor="middle">71 · Warm</text>
+
+  <rect x="352" y="552" width="256" height="52" rx="10" fill="#141416" stroke="#27272a"/>
+  <text x="368" y="574" font-size="13" class="w b">Haulr</text>
+  <text x="368" y="592" font-size="11" class="m">Freight broker · 200+</text>
+  <rect x="504" y="567" width="88" height="22" rx="11" fill="#1c1c1f" stroke="#3f3f46"/>
+  <text x="548" y="582" font-size="11" class="b" fill="#a1a1aa" text-anchor="middle">38 · Low fit</text>
+
+  <!-- Brief -->
+  <rect x="664" y="124" width="256" height="412" rx="10" fill="#18181b" stroke="#a1a1aa"/>
+  <text x="680" y="148" class="cap">BRIEF</text>
+  <text x="904" y="148" font-size="10" class="b" fill="#a78bfa" text-anchor="end">AI-generated</text>
+  <text x="680" y="176" font-size="15" class="w b">Fleetgrid</text>
+  <text x="680" y="194" font-size="11" class="m">fleetgrid.io · Berlin · 86/100</text>
+  <path d="M680 208h224" stroke="#27272a"/>
+  <text x="680" y="230" class="cap">SUMMARY</text>
+  <g font-size="12" class="d">
+    <text x="680" y="250">Berlin route-planning SaaS for</text>
+    <text x="680" y="268">mid-size fleets. Raised a Series A</text>
+    <text x="680" y="286">in March; now hiring 3 sales reps.</text>
+  </g>
+  <text x="680" y="316" class="cap">WHY NOW</text>
+  <g font-size="12" class="d">
+    <text x="680" y="336">• Scaling sales team (6 open roles)</text>
+    <text x="680" y="354">• New Rotterdam office (press, May)</text>
+    <text x="680" y="372">• Added an Enterprise pricing tier</text>
+  </g>
+  <text x="680" y="402" class="cap">SUGGESTED ANGLE</text>
+  <g font-size="12" class="p">
+    <text x="680" y="422">Automate lead research for their</text>
+    <text x="680" y="440">new SDRs before they ramp up.</text>
+  </g>
+  <rect x="680" y="480" width="132" height="32" rx="8" fill="#fafafa"/>
+  <text x="746" y="500" font-size="12" class="b" fill="#0b0b0c" text-anchor="middle">Export to CRM</text>
+  <rect x="820" y="480" width="84" height="32" rx="8" fill="none" stroke="#3f3f46"/>
+  <text x="862" y="500" font-size="12" class="p" text-anchor="middle">Copy</text>
+
+  <g fill="none" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="686" cy="562" r="7" fill="#12251a" stroke="#22c55e" stroke-width="1"/><path d="M683 562l2 2 4-4"/>
+    <circle cx="686" cy="588" r="7" fill="#12251a" stroke="#22c55e" stroke-width="1"/><path d="M683 588l2 2 4-4"/>
+  </g>
+  <text x="700" y="566" font-size="11" class="s">Company-level public data only</text>
+  <text x="700" y="592" font-size="11" class="s">Added to this week’s target list</text>
+</svg>
