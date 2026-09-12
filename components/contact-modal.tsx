@@ -16,10 +16,7 @@ const WhatsAppIcon = () => (
 
 const contacts = [
   { label: 'Discord', icon: DiscordIcon, href: 'https://discord.gg/bHEjbQdEcx' },
-  { label: 'WhatsApp', icon: WhatsAppIcon, href: 'https://wa.me/923095571212' },
   { label: 'Email', icon: Mail, href: 'mailto:grouchyseeker@gmail.com' },
-  { label: 'Twitter', icon: Twitter, href: 'https://x.com/Seekehr' },
-  { label: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/seekehr9.9.9/' },
 ];
 
 interface Props {

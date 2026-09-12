@@ -14,7 +14,6 @@ export default function Navbar({ onContact }: Props) {
 
   const navItems = [
     { label: 'Services', href: '#services' },
-    { label: 'Features', href: '#features' },
     { label: 'Portfolio', href: 'https://seekehr.github.io/' },
     { label: 'Contact', href: '#contact' },
   ];

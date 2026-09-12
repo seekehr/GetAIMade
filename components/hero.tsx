@@ -23,7 +23,7 @@ export default function Hero({ onContact }: Props) {
 
             {/* Subheading */}
             <p className="text-lg text-white/70 leading-relaxed max-w-xl animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-              We build custom AI systems, chatbots, and automations that help businesses scale, engage, and convert more leads into loyal customers.
+              Personal workflow automation, AI-powered document workflows, Research automation, API integrations, custom RAG systems, Lead automation.
             </p>
 
             {/* CTA Buttons */}
