@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { ArrowRight, Inbox, FileText, Search, Workflow, BookOpen, Target } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Github, Inbox, FileText, Search, Workflow, BookOpen, Target } from 'lucide-react';
 
 const projects = [
   {
@@ -16,6 +16,7 @@ const projects = [
       'The inbox only surfaces what actually needs a reply. Everything else is already filed, archived, or drafted.',
     stack: ['Gmail API', 'LLM classification', 'Slack', 'Notion'],
     image: '/featureimgs/inbox-triage.svg',
+    repo: 'https://github.com/seekehr/',
     alt: 'Inbox triage dashboard: emails tagged Urgent, Invoice, Client and Newsletter with one-line AI summaries, routed into a Slack digest and a Notion task list',
   },
   {
@@ -29,6 +30,7 @@ const projects = [
       'No more retyping invoices. Low-confidence fields get flagged for a human instead of silently going wrong.',
     stack: ['OCR', 'LLM extraction', 'JSON schema', 'Excel / Sheets'],
     image: '/featureimgs/invoice-extraction.svg',
+    repo: 'https://github.com/seekehr/',
     alt: 'A PDF invoice with highlighted fields next to the extracted key-value fields with confidence scores and the new row in an invoices spreadsheet',
   },
   {
@@ -42,6 +44,7 @@ const projects = [
       'A cited competitor brief in minutes instead of an afternoon of open tabs, and every claim links back to its source.',
     stack: ['Web search', 'Scraping', 'LLM agents', 'Notion / PDF export'],
     image: '/featureimgs/research-agent.svg',
+    repo: 'https://github.com/seekehr/',
     alt: 'Research agent run showing completed steps and collected sources beside a generated competitor report with a comparison table and citations',
   },
   {
@@ -55,6 +58,7 @@ const projects = [
       'One source of truth. Nobody copy-pastes deals between tools, and failed syncs retry instead of disappearing.',
     stack: ['HubSpot API', 'Slack API', 'Google Sheets API', 'Webhooks'],
     image: '/featureimgs/crm-slack-sheets-sync.svg',
+    repo: 'https://github.com/seekehr/',
     alt: 'System diagram of HubSpot, a sync service, Slack and Google Sheets, with a Slack deal-won alert and the matching updated row in the pipeline sheet',
   },
   {
@@ -68,6 +72,7 @@ const projects = [
       'Staff get answers they can verify in one click, instead of pinging the one person who knows.',
     stack: ['Embeddings', 'Vector DB', 'RAG', 'Google Drive + Notion'],
     image: '/featureimgs/knowledge-assistant.svg',
+    repo: 'https://github.com/seekehr/',
     alt: 'Knowledge assistant chat answering a refund-policy question with numbered citations and source cards from Google Drive and a Notion wiki',
   },
   {
@@ -81,6 +86,7 @@ const projects = [
       'Sales spends its time on the leads worth it, and every qualified lead gets a relevant reply the same day.',
     stack: ['Enrichment APIs', 'LLM scoring', 'Gmail', 'HubSpot'],
     image: '/featureimgs/lead-qualification.svg',
+    repo: 'https://github.com/seekehr/',
     alt: 'Three-stage lead pipeline: incoming leads, an enriched lead with a fit score of 86, and an auto-drafted personalized follow-up email awaiting approval',
   },
 ];
@@ -204,6 +210,21 @@ export default function Features() {
                     <p className="text-white font-medium leading-relaxed">{project.outcome}</p>
                   </div>
                   <p className="text-sm text-white/40 font-mono">{project.stack.join(' · ')}</p>
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/repo flex items-center justify-between gap-4 pt-5 border-t border-white/10"
+                  >
+                    <span className="flex items-center gap-2.5 text-xs font-semibold text-white/50 uppercase tracking-widest">
+                      <Github className="w-4 h-4" strokeWidth={1.75} />
+                      Example Project
+                    </span>
+                    <span className="flex items-center gap-1 text-sm font-mono text-white/70 group-hover/repo:text-white transition-colors">
+                      {project.repo.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                      <ArrowUpRight className="w-4 h-4 group-hover/repo:translate-x-0.5 group-hover/repo:-translate-y-0.5 transition-transform" />
+                    </span>
+                  </a>
                 </div>
               </article>
             );
