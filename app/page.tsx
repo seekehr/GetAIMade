@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Navbar from '@/components/navbar';
 import Hero from '@/components/hero';
+import Features from '@/components/features';
 import Stats from '@/components/stats';
 import Testimonials from '@/components/testimonials';
 import CTA from '@/components/cta';
@@ -40,6 +41,7 @@ export default function Page() {
       <div className="relative z-10">
         <Navbar onContact={() => setContactOpen(true)} />
         <Hero onContact={() => setContactOpen(true)} />
+        <Features />
         <Testimonials />
         <CTA onContact={() => setContactOpen(true)} />
         <Footer />

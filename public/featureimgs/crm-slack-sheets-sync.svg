@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" font-family="Inter, 'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif">
+  <title>CRM, Slack and Google Sheets sync: system diagram with a Slack deal alert and the updated pipeline sheet</title>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a1a1aa"/></marker>
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#1f1f23"/></pattern>
+  </defs>
+  <style>
+    .b{font-weight:700}
+    .w{fill:#fafafa}.p{fill:#e4e4e7}.s{fill:#a1a1aa}.m{fill:#71717a}.d{fill:#d4d4d8}
+    .mono{font-family:ui-monospace, 'SF Mono', 'Cascadia Code', Consolas, monospace}
+    .edge{fill:none;stroke:#71717a;stroke-width:1.5}
+  </style>
+
+  <rect width="960" height="640" rx="16" fill="#0b0b0c"/>
+  <rect x=".5" y=".5" width="959" height="639" rx="15.5" fill="none" stroke="#27272a"/>
+  <path d="M1 44h958" stroke="#27272a"/>
+  <circle cx="24" cy="22" r="6" fill="#3f3f46"/><circle cx="44" cy="22" r="6" fill="#3f3f46"/><circle cx="64" cy="22" r="6" fill="#3f3f46"/>
+  <text x="88" y="27" font-size="13" class="s">Sync Service — HubSpot ↔ Slack ↔ Google Sheets</text>
+  <circle cx="742" cy="23" r="4" fill="#4ade80"/>
+  <text x="936" y="27" font-size="12" class="m" text-anchor="end">Healthy · 142 events in the last 24h</text>
+
+  <!-- Diagram -->
+  <rect x="24" y="64" width="912" height="316" rx="12" fill="#0f0f11" stroke="#27272a"/>
+  <rect x="25" y="65" width="910" height="314" rx="11" fill="url(#dots)"/>
+
+  <path class="edge" d="M272 220H384" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <path class="edge" d="M576 204C632 204 632 130 688 130" marker-end="url(#arr)"/>
+  <path class="edge" d="M576 236C632 236 632 310 688 310" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <text x="328" y="208" font-size="11" class="s mono" text-anchor="middle">deal.updated</text>
+  <text x="328" y="241" font-size="11" class="m mono" text-anchor="middle">sheet edits</text>
+  <text x="640" y="116" font-size="11" class="s mono" text-anchor="middle">post message</text>
+  <text x="640" y="340" font-size="11" class="s mono" text-anchor="middle">row.upsert</text>
+
+  <circle r="3.5" fill="#4ade80"><animateMotion dur="2.6s" repeatCount="indefinite" path="M272 220H384"/></circle>
+  <circle r="3.5" fill="#4ade80"><animateMotion dur="2.6s" begin="-0.9s" repeatCount="indefinite" path="M576 204C632 204 632 130 688 130"/></circle>
+  <circle r="3.5" fill="#4ade80"><animateMotion dur="2.6s" begin="-1.7s" repeatCount="indefinite" path="M576 236C632 236 632 310 688 310"/></circle>
+
+  <!-- CRM node -->
+  <rect x="64" y="182" width="208" height="76" rx="12" fill="#141416" stroke="#3f3f46"/>
+  <rect x="80" y="202" width="36" height="36" rx="9" fill="#fafafa"/>
+  <text x="98" y="226" font-size="16" class="b" fill="#0b0b0c" text-anchor="middle">H</text>
+  <text x="128" y="216" font-size="15" class="w b">HubSpot CRM</text>
+  <text x="128" y="236" font-size="11" class="m">deals · contacts</text>
+
+  <!-- Hub -->
+  <rect x="384" y="172" width="192" height="96" rx="14" fill="#18181b" stroke="#71717a"/>
+  <text x="480" y="208" font-size="16" class="w b" text-anchor="middle">Sync service</text>
+  <text x="480" y="230" font-size="11" class="s" text-anchor="middle">webhooks · queue · retries</text>
+  <text x="480" y="252" font-size="10" fill="#4ade80" text-anchor="middle">running · v1.4</text>
+
+  <!-- Slack node -->
+  <rect x="688" y="92" width="208" height="76" rx="12" fill="#141416" stroke="#3f3f46"/>
+  <rect x="704" y="112" width="36" height="36" rx="9" fill="#fafafa"/>
+  <text x="722" y="136" font-size="17" class="b" fill="#0b0b0c" text-anchor="middle">#</text>
+  <text x="752" y="126" font-size="15" class="w b">Slack</text>
+  <text x="752" y="146" font-size="11" class="m">#sales-wins</text>
+
+  <!-- Sheets node -->
+  <rect x="688" y="272" width="208" height="76" rx="12" fill="#141416" stroke="#3f3f46"/>
+  <rect x="704" y="292" width="36" height="36" rx="9" fill="#15803d"/>
+  <path d="M712 302h20M712 310h20M712 318h20M722 298v24" stroke="#dcfce7" stroke-width="1.5"/>
+  <text x="752" y="306" font-size="15" class="w b">Google Sheets</text>
+  <text x="752" y="326" font-size="11" class="m">Pipeline 2026</text>
+
+  <text x="44" y="364" font-size="11" class="m mono">retries: 3 · dead-letter queue: 0</text>
+  <text x="916" y="364" font-size="11" class="m mono" text-anchor="end">avg latency 1.2s</text>
+
+  <!-- Slack message -->
+  <rect x="24" y="396" width="448" height="220" rx="12" fill="#111113" stroke="#27272a"/>
+  <rect x="44" y="412" width="22" height="22" rx="6" fill="#27272a"/>
+  <text x="55" y="428" font-size="14" class="w b" text-anchor="middle">#</text>
+  <text x="76" y="428" font-size="14" class="w b">sales-wins</text>
+  <text x="452" y="428" font-size="12" class="m" text-anchor="end">Slack</text>
+  <path d="M24 446h448" stroke="#27272a"/>
+  <rect x="44" y="460" width="32" height="32" rx="8" fill="#fafafa"/>
+  <text x="60" y="481" font-size="15" class="b" fill="#0b0b0c" text-anchor="middle">S</text>
+  <text x="88" y="472" font-size="14" class="w b">Sync Bot</text>
+  <rect x="156" y="461" width="30" height="15" rx="3" fill="#27272a"/>
+  <text x="171" y="472" font-size="9" class="s b" text-anchor="middle">APP</text>
+  <text x="194" y="472" font-size="12" class="m">2:14 PM</text>
+  <rect x="88" y="484" width="3" height="114" rx="1.5" fill="#22c55e"/>
+  <text x="102" y="502" font-size="14" class="w b">Deal won: Brightline Co.</text>
+  <text x="102" y="526" font-size="12" class="m">Amount</text><text x="170" y="526" font-size="13" class="p">$18,400</text>
+  <text x="102" y="548" font-size="12" class="m">Owner</text><text x="170" y="548" font-size="13" class="p">Alex Kim</text>
+  <text x="102" y="570" font-size="12" class="m">Stage</text><text x="170" y="570" font-size="13" class="p">Closed won → Onboarding</text>
+  <text x="102" y="594" font-size="12" fill="#60a5fa">Open in HubSpot ↗</text>
+
+  <!-- Sheet -->
+  <rect x="488" y="396" width="448" height="220" rx="12" fill="#111113" stroke="#27272a"/>
+  <rect x="508" y="412" width="22" height="22" rx="5" fill="#15803d"/>
+  <path d="M512 418h14M512 423h14M512 428h14M519 415v16" stroke="#dcfce7" stroke-width="1"/>
+  <text x="540" y="428" font-size="14" class="w b">Pipeline 2026</text>
+  <text x="916" y="428" font-size="12" class="m" text-anchor="end">Google Sheets</text>
+
+  <rect x="504" y="456" width="416" height="24" fill="#18181b"/>
+  <rect x="504" y="532" width="416" height="26" fill="#22c55e" fill-opacity=".12"/>
+  <path d="M504 480h416M504 506h416M504 532h416M504 558h416M528 456v128M660 456v128M740 456v128M840 456v128" stroke="#27272a"/>
+  <rect x="504" y="456" width="416" height="128" fill="none" stroke="#27272a"/>
+  <rect x="504" y="532" width="416" height="26" fill="none" stroke="#22c55e"/>
+  <g font-size="11" class="s b">
+    <text x="536" y="472">Company</text><text x="668" y="472">Amount</text><text x="748" y="472">Stage</text><text x="848" y="472">Owner</text>
+  </g>
+  <g font-size="12" class="d">
+    <text x="516" y="497" font-size="10" class="m" text-anchor="middle">1</text>
+    <text x="536" y="497">Northstar Labs</text><text x="668" y="497">$9,800</text><text x="748" y="497">Proposal</text><text x="848" y="497">Sam</text>
+    <text x="516" y="523" font-size="10" class="m" text-anchor="middle">2</text>
+    <text x="536" y="523">Ferro Health</text><text x="668" y="523">$22,000</text><text x="748" y="523">Discovery</text><text x="848" y="523">Alex</text>
+    <text x="516" y="575" font-size="10" class="m" text-anchor="middle">4</text>
+    <text x="536" y="575">Oakridge</text><text x="668" y="575">$6,750</text><text x="748" y="575">Negotiation</text><text x="848" y="575">Jo</text>
+  </g>
+  <g font-size="12" class="w b">
+    <text x="516" y="549" font-size="10" fill="#4ade80" text-anchor="middle">3</text>
+    <text x="536" y="549">Brightline Co.</text><text x="668" y="549">$18,400</text><text x="748" y="549" fill="#4ade80">Closed won</text><text x="848" y="549">Alex</text>
+  </g>
+  <circle cx="512" cy="600" r="3.5" fill="#4ade80"/>
+  <text x="522" y="604" font-size="11" fill="#4ade80">Row 3 updated from HubSpot · 2:14 PM</text>
+</svg>

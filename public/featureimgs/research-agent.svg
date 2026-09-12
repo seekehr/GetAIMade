@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" font-family="Inter, 'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif">
+  <title>Competitor research agent: completed steps, collected sources, and the generated cited report</title>
+  <style>
+    .b{font-weight:700}
+    .w{fill:#fafafa}.p{fill:#e4e4e7}.s{fill:#a1a1aa}.m{fill:#71717a}.d{fill:#d4d4d8}
+    .mono{font-family:ui-monospace, 'SF Mono', 'Cascadia Code', Consolas, monospace}
+    .cap{font-size:11px;letter-spacing:.08em;font-weight:700;fill:#71717a}
+    .c{fill:#60a5fa}
+  </style>
+
+  <rect width="960" height="640" rx="16" fill="#0b0b0c"/>
+  <rect x=".5" y=".5" width="959" height="639" rx="15.5" fill="none" stroke="#27272a"/>
+  <path d="M1 44h958" stroke="#27272a"/>
+  <circle cx="24" cy="22" r="6" fill="#3f3f46"/><circle cx="44" cy="22" r="6" fill="#3f3f46"/><circle cx="64" cy="22" r="6" fill="#3f3f46"/>
+  <text x="88" y="27" font-size="13" class="s">Research Agent — Competitor Brief</text>
+  <text x="936" y="27" font-size="12" class="m" text-anchor="end">Completed in 6m 12s · 23 sources</text>
+
+  <!-- Agent run -->
+  <rect x="24" y="64" width="360" height="552" rx="12" fill="#111113" stroke="#27272a"/>
+  <text x="44" y="92" class="cap">TASK</text>
+  <rect x="40" y="102" width="328" height="64" rx="8" fill="#18181b" stroke="#27272a"/>
+  <text x="54" y="128" font-size="13" class="p">Compare the top 3 AI note-taking apps:</text>
+  <text x="54" y="150" font-size="13" class="p">pricing, positioning, recent launches.</text>
+
+  <text x="44" y="196" class="cap">STEPS</text>
+  <g fill="none" stroke="#4ade80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="52" cy="218" r="8" fill="#12251a" stroke="#22c55e" stroke-width="1"/><path d="M48 218l3 3 5-6"/>
+    <circle cx="52" cy="244" r="8" fill="#12251a" stroke="#22c55e" stroke-width="1"/><path d="M48 244l3 3 5-6"/>
+    <circle cx="52" cy="270" r="8" fill="#12251a" stroke="#22c55e" stroke-width="1"/><path d="M48 270l3 3 5-6"/>
+    <circle cx="52" cy="296" r="8" fill="#12251a" stroke="#22c55e" stroke-width="1"/><path d="M48 296l3 3 5-6"/>
+    <circle cx="52" cy="322" r="8" fill="#12251a" stroke="#22c55e" stroke-width="1"/><path d="M48 322l3 3 5-6"/>
+  </g>
+  <text x="70" y="222" font-size="13" class="p">Planned 6 search queries</text>
+  <text x="70" y="248" font-size="13" class="p">Collected 23 sources</text>
+  <text x="70" y="274" font-size="13" class="p">Read and summarized 17 pages</text>
+  <text x="70" y="300" font-size="13" class="p">Cross-checked pricing pages</text>
+  <text x="70" y="326" font-size="13" class="p">Wrote report · 1,240 words</text>
+  <g font-size="11" class="m mono" text-anchor="end">
+    <text x="368" y="222">0:04</text><text x="368" y="248">1:52</text><text x="368" y="274">4:31</text><text x="368" y="300">5:20</text><text x="368" y="326">6:12</text>
+  </g>
+
+  <text x="44" y="358" class="cap">SOURCES · 23</text>
+  <g>
+    <rect x="40" y="378" width="26" height="26" rx="6" fill="#27272a"/><text x="53" y="396" font-size="12" class="p b" text-anchor="middle">N</text>
+    <text x="78" y="390" font-size="13" class="p">Notely pricing — plans &amp; FAQ</text>
+    <text x="78" y="406" font-size="11" class="m">notely.app/pricing</text>
+    <text x="368" y="390" font-size="11" class="mono c" text-anchor="end">[1]</text>
+
+    <rect x="40" y="422" width="26" height="26" rx="6" fill="#27272a"/><text x="53" y="440" font-size="12" class="p b" text-anchor="middle">S</text>
+    <text x="78" y="434" font-size="13" class="p">Scribe.ai launches team workspaces</text>
+    <text x="78" y="450" font-size="11" class="m">scribe.ai/blog</text>
+    <text x="368" y="434" font-size="11" class="mono c" text-anchor="end">[2]</text>
+
+    <rect x="40" y="466" width="26" height="26" rx="6" fill="#27272a"/><text x="53" y="484" font-size="12" class="p b" text-anchor="middle">T</text>
+    <text x="78" y="478" font-size="13" class="p">MeetMind review: 3 months in</text>
+    <text x="78" y="494" font-size="11" class="m">techreview.io</text>
+    <text x="368" y="478" font-size="11" class="mono c" text-anchor="end">[3]</text>
+
+    <rect x="40" y="510" width="26" height="26" rx="6" fill="#27272a"/><text x="53" y="528" font-size="12" class="p b" text-anchor="middle">P</text>
+    <text x="78" y="522" font-size="13" class="p">AI note-takers compared (2026)</text>
+    <text x="78" y="538" font-size="11" class="m">productlist.co</text>
+    <text x="368" y="522" font-size="11" class="mono c" text-anchor="end">[4]</text>
+
+    <rect x="40" y="554" width="26" height="26" rx="6" fill="#27272a"/><text x="53" y="572" font-size="12" class="p b" text-anchor="middle">M</text>
+    <text x="78" y="566" font-size="13" class="p">MeetMind changelog — August</text>
+    <text x="78" y="582" font-size="11" class="m">meetmind.com/changelog</text>
+    <text x="368" y="566" font-size="11" class="mono c" text-anchor="end">[5]</text>
+  </g>
+  <text x="44" y="606" font-size="12" class="m">+ 18 more sources</text>
+
+  <!-- Report -->
+  <rect x="408" y="64" width="528" height="552" rx="12" fill="#111113" stroke="#27272a"/>
+  <rect x="432" y="84" width="64" height="22" rx="11" fill="#111d2e" stroke="#1e3a5f"/>
+  <text x="464" y="99" font-size="10" class="b" fill="#60a5fa" text-anchor="middle" letter-spacing="1">REPORT</text>
+  <text x="508" y="99" font-size="12" class="m">Generated 13 Sep 2026 · 17 citations</text>
+  <text x="432" y="140" font-size="21" class="w b">Competitor Brief: AI Note-Taking Apps</text>
+  <path d="M432 160h480" stroke="#27272a"/>
+
+  <text x="432" y="188" font-size="14" class="w b">Summary</text>
+  <text x="432" y="212" font-size="13" class="d">All three now include transcription for free — the competition has</text>
+  <text x="432" y="232" font-size="13" class="d">moved to team features. Scribe.ai shipped shared workspaces in</text>
+  <text x="432" y="252" font-size="13" class="d">August <tspan class="c">[2]</tspan>, and MeetMind cut its Pro tier to $12/mo <tspan class="c">[5]</tspan>. Notely</text>
+  <text x="432" y="272" font-size="13" class="d">remains focused on individual users <tspan class="c">[1][4]</tspan>.</text>
+
+  <text x="432" y="308" font-size="14" class="w b">Comparison</text>
+  <rect x="432" y="322" width="480" height="26" fill="#18181b"/>
+  <path d="M432 348h480M432 382h480M432 416h480M536 322v128M624 322v128M760 322v128" stroke="#27272a"/>
+  <rect x="432" y="322" width="480" height="128" fill="none" stroke="#27272a"/>
+  <g font-size="11" class="s b">
+    <text x="444" y="339">App</text><text x="548" y="339">Price</text><text x="636" y="339">Positioning</text><text x="772" y="339">Recent move</text>
+  </g>
+  <g font-size="12" class="d">
+    <text x="444" y="369" class="w b">Notely</text><text x="548" y="369">$10/mo</text><text x="636" y="369">Solo creators</text><text x="772" y="369">Offline mode <tspan class="c">[1]</tspan></text>
+    <text x="444" y="403" class="w b">Scribe.ai</text><text x="548" y="403">$15/seat</text><text x="636" y="403">Teams</text><text x="772" y="403">Workspaces <tspan class="c">[2]</tspan></text>
+    <text x="444" y="437" class="w b">MeetMind</text><text x="548" y="437">$12/mo</text><text x="636" y="437">Sales calls</text><text x="772" y="437">Price cut <tspan class="c">[5]</tspan></text>
+  </g>
+
+  <text x="432" y="486" font-size="14" class="w b">Opportunities</text>
+  <text x="432" y="512" font-size="13" class="d">• Nobody owns the meeting → CRM workflow yet <tspan class="c">[3][4]</tspan></text>
+  <text x="432" y="536" font-size="13" class="d">• Team pricing is still per-seat across the board <tspan class="c">[1][2]</tspan></text>
+  <text x="432" y="560" font-size="13" class="d">• Offline and privacy are an underused angle <tspan class="c">[1]</tspan></text>
+
+  <path d="M432 578h480" stroke="#27272a"/>
+  <text x="432" y="603" font-size="12" class="m">Export</text>
+  <rect x="484" y="588" width="44" height="22" rx="6" fill="none" stroke="#3f3f46"/><text x="506" y="603" font-size="11" class="p" text-anchor="middle">PDF</text>
+  <rect x="536" y="588" width="62" height="22" rx="6" fill="none" stroke="#3f3f46"/><text x="567" y="603" font-size="11" class="p" text-anchor="middle">Notion</text>
+  <rect x="606" y="588" width="88" height="22" rx="6" fill="none" stroke="#3f3f46"/><text x="650" y="603" font-size="11" class="p" text-anchor="middle">Google Doc</text>
+  <text x="912" y="603" font-size="12" class="m" text-anchor="end">Sent to #strategy</text>
+</svg>
