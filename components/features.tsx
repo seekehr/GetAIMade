@@ -29,17 +29,17 @@ const services = [
     description:
       'Pull specific information from messy pages, PDFs, articles, or semi-structured content, optionally with the help of AI parsing.',
     example: {
-      name: 'ShiaBox hadith extractor',
+      name: 'Product spec extractor',
       summary:
-        'Pulls every hadith from thaqalayn.net into structured JSON: English, Arabic, book, volume, chapter and source link.',
+        'Pulls the same spec fields from spec tables, marketing copy and PDF datasheets, whatever the layout.',
     },
-    flow: ['Discover volumes', 'Fetch chapters', 'Parse to JSON', 'Embed'],
+    flow: ['Parse page or PDF', 'Extract to schema', 'Validate'],
     outcome:
-      'A whole hadith library becomes clean, citable records, Arabic and English side by side, each linking back to its source page, powering ShiaBox’s AI search.',
-    stack: ['Playwright', 'TypeScript', 'node-html-parser', 'JSON', 'Qdrant'],
+      'One schema across wildly different layouts, with units normalized, and a site redesign doesn’t break it the way a CSS selector would.',
+    stack: ['LLM extraction', 'JSON schema', 'PDF parsing', 'Validation'],
     image: '/featureimgs/smart-extraction.svg',
-    repo: 'https://github.com/seekehr/shiabox',
-    alt: 'Hadith extractor: volumes discovered on thaqalayn.net, a chapter page with Arabic and English text, and the structured JSON record fed into Ollama embeddings and a Qdrant index',
+    repo: 'https://github.com/seekehr/',
+    alt: 'A spec table, a marketing paragraph and a PDF datasheet with highlighted values, all extracted into one product specs table and a JSON record',
   },
   {
     icon: BookOpen,
@@ -47,17 +47,17 @@ const services = [
     description:
       'Turn scraped websites, documents, or internal knowledge into an AI assistant that answers questions using the collected sources.',
     example: {
-      name: 'Product docs assistant',
+      name: 'ShiaBox',
       summary:
-        'An assistant built on a crawled docs site, API reference and changelog that answers with links to the exact page.',
+        'An AI search engine over hadith scraped from thaqalayn.net that answers with the exact narrations it used, in Arabic and English.',
     },
-    flow: ['Crawl docs', 'Chunk & embed', 'Answer with citations'],
+    flow: ['Scrape & embed', 'Retrieve top 10', 'Rerank to 3', 'Answer with sources'],
     outcome:
-      'Users and support staff get answers they can verify in one click, and the index refreshes itself when the docs change.',
-    stack: ['Crawler', 'Embeddings', 'Vector DB', 'RAG'],
+      'Ask in plain language and get an answer grounded in real narrations, each cited with its book, volume and chapter and a link to the source.',
+    stack: ['Playwright scraper', 'Ollama embeddings', 'Qdrant', 'Groq', 'FastAPI'],
     image: '/featureimgs/rag-docs-assistant.svg',
-    repo: 'https://github.com/seekehr/',
-    alt: 'Docs assistant chat answering how to rotate an API key, with numbered citations and source cards linking to the crawled documentation pages',
+    repo: 'https://github.com/seekehr/shiabox',
+    alt: 'ShiaBox: scraped hadith embedded into Qdrant, the top 10 matches reranked to 3 by Groq, and a chat answer citing each narration with its Arabic and English text',
   },
   {
     icon: Radar,
