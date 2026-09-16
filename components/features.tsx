@@ -11,17 +11,17 @@ const services = [
     description:
       'Scrape websites, directories, listings, docs, or public data sources, then clean and structure the data automatically.',
     example: {
-      name: 'Business directory scraper',
+      name: 'Quizlet flashcard scraper',
       summary:
-        'Crawls every listing page of a local-business directory and turns it into one clean, deduplicated dataset.',
+        'Backs up every public flashcard set in every public folder on a Quizlet profile, one text file per set.',
     },
-    flow: ['Crawl', 'Parse', 'Clean & dedupe', 'Export'],
+    flow: ['Pass Cloudflare', 'Crawl folders', 'Extract cards', 'Validate & export'],
     outcome:
-      'Hundreds of inconsistent listing pages become a spreadsheet you can actually use: normalized phones, addresses and categories, no duplicates.',
-    stack: ['Playwright', 'Python', 'LLM cleanup', 'Postgres', 'CSV / Sheets'],
+      'A whole Quizlet library saved locally as clean term : definition files, organized by folder, and one broken set never stops the run.',
+    stack: ['Playwright', 'TypeScript', 'Real Chrome profile', 'Zod'],
     image: '/featureimgs/web-scraping.svg',
-    repo: 'https://github.com/seekehr/',
-    alt: 'Directory scraper: crawl job progress and request log, a messy raw listing cleaned into structured fields, and the deduplicated dataset table',
+    repo: 'https://github.com/seekehr/Scrape-Quizlet-Flashcards',
+    alt: 'Quizlet scraper: a user’s public folders page and a flashcard set rendered in Chrome, a run log, and the exported data folder with one numbered term : definition text file per set',
   },
   {
     icon: ScanText,
@@ -29,17 +29,17 @@ const services = [
     description:
       'Pull specific information from messy pages, PDFs, articles, or semi-structured content, optionally with the help of AI parsing.',
     example: {
-      name: 'Product spec extractor',
+      name: 'ShiaBox hadith extractor',
       summary:
-        'Pulls the same spec fields from spec tables, marketing copy and PDF datasheets, whatever the layout.',
+        'Pulls every hadith from thaqalayn.net into structured JSON: English, Arabic, book, volume, chapter and source link.',
     },
-    flow: ['Parse page or PDF', 'Extract to schema', 'Validate'],
+    flow: ['Discover volumes', 'Fetch chapters', 'Parse to JSON', 'Embed'],
     outcome:
-      'One schema across wildly different layouts, with units normalized, and a site redesign doesn’t break it the way a CSS selector would.',
-    stack: ['LLM extraction', 'JSON schema', 'PDF parsing', 'Validation'],
+      'A whole hadith library becomes clean, citable records, Arabic and English side by side, each linking back to its source page, powering ShiaBox’s AI search.',
+    stack: ['Playwright', 'TypeScript', 'node-html-parser', 'JSON', 'Qdrant'],
     image: '/featureimgs/smart-extraction.svg',
-    repo: 'https://github.com/seekehr/Scrape-Quizlet-Flashcards',
-    alt: 'Quizlet scraper: a user’s public folders page and a flashcard set rendered in Chrome, a run log, and the exported data folder with one numbered term : definition text file per set',
+    repo: 'https://github.com/seekehr/shiabox',
+    alt: 'Hadith extractor: volumes discovered on thaqalayn.net, a chapter page with Arabic and English text, and the structured JSON record fed into Ollama embeddings and a Qdrant index',
   },
   {
     icon: BookOpen,

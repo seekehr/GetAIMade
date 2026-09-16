@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Let phones on the LAN load dev JS (otherwise client components never hydrate)
+  allowedDevOrigins: ['192.168.100.162'],
   typescript: {
     ignoreBuildErrors: true,
   },
