@@ -27,19 +27,19 @@ const services = [
     icon: ScanText,
     title: 'Smart Data Extraction',
     description:
-      'Use AI to pull specific information from messy pages, PDFs, articles, or semi-structured content instead of relying only on brittle CSS selectors.',
+      'Pull specific information from messy pages, PDFs, articles, or semi-structured content, optionally with the help of AI parsing.',
     example: {
       name: 'Product spec extractor',
       summary:
         'Pulls the same spec fields from spec tables, marketing copy and PDF datasheets, whatever the layout.',
     },
-    flow: ['Fetch page or PDF', 'Extract to schema', 'Validate'],
+    flow: ['Parse page or PDF', 'Extract to schema', 'Validate'],
     outcome:
       'One schema across wildly different layouts, with units normalized, and a site redesign doesn’t break it the way a CSS selector would.',
     stack: ['LLM extraction', 'JSON schema', 'PDF parsing', 'Validation'],
     image: '/featureimgs/smart-extraction.svg',
-    repo: 'https://github.com/seekehr/',
-    alt: 'A spec table, a marketing paragraph and a PDF datasheet with highlighted values, all extracted into one product specs table and a JSON record',
+    repo: 'https://github.com/seekehr/Scrape-Quizlet-Flashcards',
+    alt: 'Quizlet scraper: a user’s public folders page and a flashcard set rendered in Chrome, a run log, and the exported data folder with one numbered term : definition text file per set',
   },
   {
     icon: BookOpen,
