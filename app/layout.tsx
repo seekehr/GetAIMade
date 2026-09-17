@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     default: 'Get AI Made | Custom AI Automation and Scrapping Agency',
     template: '%s | Get AI Made',
   },
-  description: 'AI-powered web scraping, smart data extraction, research & monitoring systems, custom RAG systems, lead & company intelligence, and custom data pipelines & APIs.',
+  description: 'AI-powered web scraping, smart data extraction, research & monitoring systems, custom RAG systems, and lead & company intelligence.',
   keywords: [
     'AI-powered web scraping',
     'smart data extraction',
@@ -24,8 +24,6 @@ export const metadata: Metadata = {
     'website monitoring',
     'lead intelligence',
     'company intelligence',
-    'data pipelines',
-    'API development',
     'AI data processing',
   ],
   authors: [{ name: 'Get AI Made', url: siteUrl }],
@@ -48,7 +46,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: 'Get AI Made',
     title: 'Get AI Made | Custom AI Automation Agency',
-    description: 'AI-powered web scraping, smart data extraction, research & monitoring systems, custom RAG systems, lead & company intelligence, and custom data pipelines & APIs.',
+    description: 'AI-powered web scraping, smart data extraction, research & monitoring systems, custom RAG systems, and lead & company intelligence.',
     images: [
       {
         url: '/favicon.svg',
@@ -63,7 +61,7 @@ export const metadata: Metadata = {
     site: '@Seekehr',
     creator: '@Seekehr',
     title: 'Get AI Made | Custom AI Automation Agency',
-    description: 'AI-powered web scraping, smart data extraction, research & monitoring systems, custom RAG systems, lead & company intelligence, and custom data pipelines & APIs.',
+    description: 'AI-powered web scraping, smart data extraction, research & monitoring systems, custom RAG systems, and lead & company intelligence.',
     images: ['/favicon.svg'],
   },
   alternates: {
@@ -84,7 +82,7 @@ const jsonLd = {
       name: 'Get AI Made',
       url: siteUrl,
       logo: `${siteUrl}/favicon.svg`,
-      description: 'AI-powered web scraping, smart data extraction, research & monitoring systems, custom RAG systems, lead & company intelligence, and custom data pipelines & APIs.',
+      description: 'AI-powered web scraping, smart data extraction, research & monitoring systems, custom RAG systems, and lead & company intelligence.',
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'customer support',
@@ -122,7 +120,6 @@ const jsonLd = {
         { '@type': 'ListItem', position: 3, name: 'Custom RAG Systems' },
         { '@type': 'ListItem', position: 4, name: 'Research & Monitoring Systems' },
         { '@type': 'ListItem', position: 5, name: 'Lead & Company Intelligence' },
-        { '@type': 'ListItem', position: 6, name: 'Custom Data Pipelines & APIs' },
       ],
     },
   ],

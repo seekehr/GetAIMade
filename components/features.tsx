@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { ArrowRight, ArrowUpRight, Github, Globe, ScanText, BookOpen, Radar, Building2, Workflow } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Github, Globe, ScanText, BookOpen, Radar, Building2 } from 'lucide-react';
 
 const services = [
   {
@@ -65,17 +65,17 @@ const services = [
     description:
       'Continuously collect information from selected sources, detect changes, summarize updates, compare competitors, or generate research briefs.',
     example: {
-      name: 'Competitor change monitor',
+      name: 'Polymarket bot',
       summary:
-        'Snapshots competitor pricing, changelog and careers pages every day, detects what changed, and posts a short summary.',
+        'Watches live Polymarket order books over WebSocket, reacts to price moves in milliseconds, and halts itself when risk limits are hit.',
     },
-    flow: ['Snapshot', 'Diff', 'Summarize', 'Alert'],
+    flow: ['Subscribe to feed', 'Detect the move', 'Act on the rule', 'Track & halt'],
     outcome:
-      'You hear about a competitor’s price change or launch the day it happens, without anyone checking their site.',
-    stack: ['Scheduled crawls', 'Text + visual diff', 'LLM summaries', 'Slack / email'],
+      'Chosen markets are watched non-stop, a threshold crossing is acted on before the book moves again, and a loss cap, latency spike or error spike stops the bot instead of letting it run blind.',
+    stack: ['Go', 'WebSocket feeds', 'YAML config', 'Prometheus metrics', 'HMAC-signed API'],
     image: '/featureimgs/research-monitoring.svg',
-    repo: 'https://github.com/seekehr/',
-    alt: 'Change monitor listing watched competitor pages, a pricing-page diff showing old and new prices, and an AI summary posted to a Slack channel',
+    repo: 'https://github.com/seekehr/polymarket-bot',
+    alt: 'Polymarket bot: a live WebSocket tick stream crossing a configured threshold, the YAML strategy and risk config, a millisecond latency breakdown from tick to signed order, and guard metrics with auto-halt limits',
   },
   {
     icon: Building2,
@@ -94,24 +94,6 @@ const services = [
     image: '/featureimgs/company-intelligence.svg',
     repo: 'https://github.com/seekehr/FindClients',
     alt: 'FindClients: Upwork feed and X keyword searches feed a scrape run that dedupes, filters and screens leads with Gemini, shown in a leads dashboard with qualified and rejected verdicts, scores and reasons',
-  },
-  {
-    icon: Workflow,
-    title: 'Custom Data Pipelines & APIs',
-    description:
-      'Build the backend that ties everything together: crawling, queues, databases, deduplication, scheduled jobs, AI processing, APIs, and exports.',
-    example: {
-      name: 'Scraping pipeline & API',
-      summary:
-        'The backend behind the systems above: scheduled crawls, a job queue, AI processing, deduplication, a database and a clean API.',
-    },
-    flow: ['Schedule', 'Crawl', 'Process', 'Store', 'Serve'],
-    outcome:
-      'Data arrives on schedule, failed jobs retry on their own, duplicates never reach the database, and your apps read it all through one API.',
-    stack: ['Python / Node', 'Redis queue', 'Postgres', 'REST API', 'Cron'],
-    image: '/featureimgs/data-pipeline.svg',
-    repo: 'https://github.com/seekehr/',
-    alt: 'Pipeline architecture from scheduler to crawlers, queue, AI processing, dedupe and Postgres feeding an API, exports and webhooks, with job runs and an API response',
   },
 ];
 
