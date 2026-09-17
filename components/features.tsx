@@ -29,17 +29,17 @@ const services = [
     description:
       'Pull specific information from messy pages, PDFs, articles, or semi-structured content, optionally with the help of AI parsing.',
     example: {
-      name: 'Product spec extractor',
+      name: 'CambridgePastPapersAI',
       summary:
-        'Pulls the same spec fields from spec tables, marketing copy and PDF datasheets, whatever the layout.',
+        'Turns Cambridge past paper PDFs into one JSON record per question, tagged with topic and question type by Gemini.',
     },
-    flow: ['Parse page or PDF', 'Extract to schema', 'Validate'],
+    flow: ['Extract with coords', 'Segment questions', 'Label with AI', 'Validate & export'],
     outcome:
-      'One schema across wildly different layouts, with units normalized, and a site redesign doesn’t break it the way a CSS selector would.',
-    stack: ['LLM extraction', 'JSON schema', 'PDF parsing', 'Validation'],
+      'A whole paper becomes clean JSON you can paste into ChatGPT instead of uploading the PDF, and nothing the model invents survives validation against the source text.',
+    stack: ['TypeScript', 'pdfjs-dist', 'Gemini Flash', 'Zod', 'Vitest'],
     image: '/featureimgs/smart-extraction.svg',
-    repo: 'https://github.com/seekehr/',
-    alt: 'A spec table, a marketing paragraph and a PDF datasheet with highlighted values, all extracted into one product specs table and a JSON record',
+    repo: 'https://github.com/seekehr/CambridgePastPapersAI',
+    alt: 'CambridgePastPapersAI: a past paper page with its headers and footers stripped and questions segmented, an ingest run log, and the questions.json output where text, numbering and marks come from the PDF while topic, subtopic and type come from Gemini',
   },
   {
     icon: BookOpen,
@@ -83,17 +83,17 @@ const services = [
     description:
       'Collect public business data, enrich it, classify companies, score leads, and generate useful summaries or personalized outreach inputs.',
     example: {
-      name: 'Company intelligence pipeline',
+      name: 'FindClients',
       summary:
-        'Collects companies from public directories and job boards, enriches and scores them, and writes a short brief with outreach angles for each.',
+        'Watches the Upwork job feed and searches X for people who are hiring, screens every lead with Gemini, and collects the good ones in one dashboard.',
     },
-    flow: ['Collect', 'Enrich & classify', 'Score', 'Brief'],
+    flow: ['Watch & search', 'Dedupe & filter', 'AI qualify', 'Notify'],
     outcome:
-      'Sales gets a ranked list of companies that fit, each with a summary and a concrete reason to reach out now.',
-    stack: ['Public data sources', 'Enrichment', 'LLM classification', 'CRM export'],
+      'Fresh client leads land already screened, each with a 0–100 score and a one-line reason, and new ones get posted to Discord as they come in.',
+    stack: ['Playwright', 'Gemini Flash', 'Express', 'Next.js', 'Discord webhooks'],
     image: '/featureimgs/company-intelligence.svg',
-    repo: 'https://github.com/seekehr/',
-    alt: 'Three-stage pipeline: companies collected from public sources, an enriched company with a fit score of 86, and an AI-generated brief with outreach angles',
+    repo: 'https://github.com/seekehr/FindClients',
+    alt: 'FindClients: Upwork feed and X keyword searches feed a scrape run that dedupes, filters and screens leads with Gemini, shown in a leads dashboard with qualified and rejected verdicts, scores and reasons',
   },
   {
     icon: Workflow,

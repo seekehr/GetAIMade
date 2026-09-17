@@ -1,134 +1,125 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" font-family="Inter, 'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif">
-  <title>Product spec extractor: a spec table, marketing copy and a PDF datasheet with different layouts, all extracted into one schema</title>
+  <title>CambridgePastPapersAI: a past paper page with headers and footers stripped and questions segmented, an ingest run log, and the questions.json output</title>
   <style>
     .b{font-weight:700}
     .w{fill:#fafafa}.p{fill:#e4e4e7}.s{fill:#a1a1aa}.m{fill:#71717a}.d{fill:#d4d4d8}
     .mono{font-family:ui-monospace, 'SF Mono', 'Cascadia Code', Consolas, monospace}
-    .cap{font-size:10px;letter-spacing:.08em;font-weight:700;fill:#71717a}
     .ink{fill:#18181b}.ink3{fill:#78716c}
-    .v{fill:#a78bfa}.bl{fill:#60a5fa}.g{fill:#4ade80}.a{fill:#fbbf24}
+    .v{fill:#a78bfa}.bl{fill:#60a5fa}.g{fill:#4ade80}.a{fill:#fbbf24}.r{fill:#f87171}
   </style>
 
   <rect width="960" height="640" rx="16" fill="#0b0b0c"/>
   <rect x=".5" y=".5" width="959" height="639" rx="15.5" fill="none" stroke="#27272a"/>
   <path d="M1 44h958" stroke="#27272a"/>
   <circle cx="24" cy="22" r="6" fill="#3f3f46"/><circle cx="44" cy="22" r="6" fill="#3f3f46"/><circle cx="64" cy="22" r="6" fill="#3f3f46"/>
-  <text x="88" y="27" font-size="13" class="s">Spec Extractor — 3 layouts → 1 schema</text>
-  <text x="936" y="27" font-size="12" class="m" text-anchor="end">no CSS selectors · schema: product_specs_v3</text>
+  <text x="88" y="27" font-size="13" class="s">CambridgePastPapersAI — past paper PDFs → one record per question</text>
+  <text x="936" y="27" font-size="12" class="m" text-anchor="end">pdfjs-dist · Gemini · Zod</text>
 
-  <!-- Source 1: spec table -->
-  <rect x="24" y="64" width="420" height="176" rx="12" fill="#111113" stroke="#27272a"/>
-  <text x="44" y="86" font-size="12" class="w b">Spec table</text>
-  <text x="424" y="86" font-size="10" class="m mono" text-anchor="end">acme-audio.com/x200</text>
+  <!-- Source PDF -->
+  <rect x="24" y="64" width="420" height="288" rx="12" fill="#111113" stroke="#27272a"/>
+  <text x="44" y="86" font-size="12" class="w b">Source PDF</text>
+  <text x="424" y="86" font-size="10" class="m mono" text-anchor="end">9709_s23_qp_12.pdf · page 3 of 12</text>
   <path d="M24 98h420" stroke="#27272a"/>
-  <text x="44" y="124" font-size="14" class="w b">Acme X200 Headphones</text>
-  <path d="M44 158h240M44 180h240M44 202h240" stroke="#1f1f23"/>
-  <g font-size="11" class="s">
-    <text x="52" y="152">Weight</text><text x="52" y="174">Battery life</text><text x="52" y="196">Bluetooth</text><text x="52" y="218">Price</text>
-  </g>
-  <g font-size="11" class="p">
-    <text x="160" y="152">1.2 kg</text><text x="160" y="174">Up to 30 hrs</text><text x="160" y="196">5.3</text><text x="160" y="218">$249.00</text>
-  </g>
-  <g fill-opacity=".14" stroke-width="1.3">
-    <rect x="154" y="140" width="48" height="17" rx="3" fill="#a78bfa" stroke="#8b5cf6"/>
-    <rect x="154" y="162" width="78" height="17" rx="3" fill="#60a5fa" stroke="#3b82f6"/>
-    <rect x="154" y="184" width="28" height="17" rx="3" fill="#4ade80" stroke="#22c55e"/>
-    <rect x="154" y="206" width="56" height="17" rx="3" fill="#fbbf24" stroke="#f59e0b"/>
-  </g>
-  <rect x="316" y="140" width="108" height="28" rx="6" fill="#fafafa"/>
-  <text x="370" y="158" font-size="11" class="b" fill="#0b0b0c" text-anchor="middle">Add to cart</text>
-  <text x="316" y="190" font-size="10" class="m">★★★★☆ 1,203 reviews</text>
-  <text x="316" y="208" font-size="10" class="m">Free returns · 2-yr warranty</text>
 
-  <circle cx="456" cy="152" r="11" fill="#0b0b0c" stroke="#52525b"/>
-  <path d="M453 147l5 5-5 5" fill="none" stroke="#e4e4e7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="40" y="110" width="388" height="226" rx="3" fill="#f5f5f4"/>
+  <rect x="46" y="116" width="286" height="17" rx="3" fill="none" stroke="#ef4444" stroke-opacity=".7" stroke-dasharray="3 3"/>
+  <text x="52" y="128" font-size="9" class="ink3" letter-spacing=".4">CAMBRIDGE INTERNATIONAL AS &amp; A LEVEL · MATHEMATICS 9709/12</text>
+  <text x="416" y="128" font-size="9" fill="#dc2626" class="b" text-anchor="end">stripped</text>
+  <path d="M52 142h364" stroke="#e7e5e4"/>
 
-  <!-- Source 2: marketing copy -->
-  <rect x="24" y="252" width="420" height="176" rx="12" fill="#111113" stroke="#27272a"/>
-  <text x="44" y="274" font-size="12" class="w b">Marketing copy</text>
-  <text x="424" y="274" font-size="10" class="m mono" text-anchor="end">soundwave.io/pro</text>
-  <path d="M24 286h420" stroke="#27272a"/>
-  <text x="44" y="312" font-size="14" class="w b">Meet the Soundwave Pro.</text>
-  <g font-size="12" class="d">
-    <text x="44" y="336">Engineered for long days. Weighing just <tspan class="v b">980 g</tspan>, the Pro</text>
-    <text x="44" y="356">keeps playing for <tspan class="bl b">26 hours</tspan> on a single charge and</text>
-    <text x="44" y="376">pairs instantly over <tspan class="g b">Bluetooth 5.2</tspan>. Launch price: <tspan class="a b">$199</tspan>.</text>
-  </g>
-  <text x="44" y="404" font-size="11" class="m">Free shipping on orders over $50. Terms apply.</text>
+  <text x="52" y="164" font-size="11" class="ink b">1</text>
+  <text x="70" y="164" font-size="11" class="ink">The function f is defined by f(x) = 2x² − 8x + 5 for x ⩾ 2.</text>
 
-  <circle cx="456" cy="340" r="11" fill="#0b0b0c" stroke="#52525b"/>
-  <path d="M453 335l5 5-5 5" fill="none" stroke="#e4e4e7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="70" y="190" font-size="11" class="ink b">(a)</text>
+  <text x="96" y="190" font-size="11" class="ink">Express f(x) in the form a(x − b)² + c.</text>
+  <text x="416" y="190" font-size="11" class="ink b" text-anchor="end">[3]</text>
+  <g fill="#e7e5e4"><rect x="96" y="200" width="320" height="4" rx="2"/><rect x="96" y="214" width="320" height="4" rx="2"/></g>
 
-  <!-- Source 3: PDF datasheet -->
-  <rect x="24" y="440" width="420" height="176" rx="12" fill="#111113" stroke="#27272a"/>
-  <text x="44" y="462" font-size="12" class="w b">PDF datasheet</text>
-  <text x="424" y="462" font-size="10" class="m mono" text-anchor="end">nordik_n5_datasheet.pdf</text>
-  <path d="M24 474h420" stroke="#27272a"/>
-  <rect x="40" y="484" width="388" height="120" rx="3" fill="#f5f5f4"/>
-  <text x="52" y="504" font-size="10" class="ink b" letter-spacing=".5">NORDIK N5 — TECHNISCHE DATEN / SPECS</text>
-  <g font-size="10" class="ink3">
-    <text x="52" y="528">Masse / Mass</text><text x="52" y="548">Laufzeit / Runtime</text><text x="52" y="568">BT-Version</text><text x="52" y="588">UVP / MSRP</text>
+  <text x="70" y="238" font-size="11" class="ink b">(b)</text>
+  <text x="96" y="238" font-size="11" class="ink">State the range of f.</text>
+  <text x="416" y="238" font-size="11" class="ink b" text-anchor="end">[1]</text>
+  <rect x="96" y="248" width="320" height="4" rx="2" fill="#e7e5e4"/>
+
+  <text x="70" y="272" font-size="11" class="ink b">(c)</text>
+  <text x="96" y="272" font-size="11" class="ink">Find an expression for f⁻¹(x) and state its domain.</text>
+  <text x="416" y="272" font-size="11" class="ink b" text-anchor="end">[4]</text>
+  <g fill="#e7e5e4"><rect x="96" y="282" width="320" height="4" rx="2"/><rect x="96" y="296" width="320" height="4" rx="2"/></g>
+
+  <rect x="46" y="310" width="252" height="17" rx="3" fill="none" stroke="#ef4444" stroke-opacity=".7" stroke-dasharray="3 3"/>
+  <text x="52" y="322" font-size="9" class="ink3">© UCLES 2023      9709/12/M/J/23      [Turn over]</text>
+  <text x="416" y="322" font-size="9" fill="#dc2626" class="b" text-anchor="end">stripped</text>
+
+  <!-- fragment coordinate chip -->
+  <circle cx="222" cy="234" r="2.5" fill="#2563eb"/>
+  <path d="M226 234h22" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="248" y="226" width="112" height="18" rx="4" fill="#0b0b0c" stroke="#52525b"/>
+  <text x="304" y="239" font-size="9" class="s mono" text-anchor="middle">frag x 96 · y 238</text>
+
+  <circle cx="456" cy="208" r="11" fill="#0b0b0c" stroke="#52525b"/>
+  <path d="M453 203l5 5-5 5" fill="none" stroke="#e4e4e7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Ingest run -->
+  <rect x="24" y="364" width="420" height="252" rx="12" fill="#111113" stroke="#27272a"/>
+  <text x="44" y="386" font-size="12" class="w b">Ingest run</text>
+  <text x="424" y="386" font-size="10" class="m mono" text-anchor="end">npm run dev</text>
+  <path d="M24 398h420" stroke="#27272a"/>
+  <g font-size="11" class="mono">
+    <text x="44" y="422" class="d">▸ 12 pages extracted · text + fragment coords</text>
+    <text x="44" y="444" class="d">▸ lines rebuilt · headers &amp; footers stripped</text>
+    <text x="44" y="466" class="d">▸ 34 candidates · <tspan class="bl">1</tspan>, <tspan class="bl">1(a)</tspan>, <tspan class="bl">1(a)(i)</tspan></text>
+    <text x="44" y="488" class="d">▸ batch of 40 → <tspan class="v">gemini-3.8-flash</tspan></text>
+    <text x="44" y="510" class="a">↻ rate limited → fallback gemini-2.5-flash</text>
+    <text x="44" y="532" class="d"><tspan class="g">✓</tspan> Zod validated · 2 unbacked labels dropped</text>
+    <text x="44" y="554" class="d"><tspan class="g">✓</tspan> parsed_papers/…/<tspan class="a">questions.json</tspan></text>
   </g>
-  <g font-size="10" class="ink b">
-    <text x="156" y="528">1,05 kg</text><text x="156" y="548">24 h (ANC aus)</text><text x="156" y="568">5.0 LE</text><text x="156" y="588">€229,00</text>
+  <path d="M44 570h380" stroke="#27272a"/>
+  <text x="44" y="594" font-size="10" class="m">The PDF is never uploaded — only question candidates are sent.</text>
+
+  <!-- questions.json -->
+  <rect x="468" y="64" width="468" height="392" rx="12" fill="#111113" stroke="#27272a"/>
+  <text x="488" y="90" font-size="15" class="w b">questions.json</text>
+  <text x="916" y="90" font-size="11" class="m mono" text-anchor="end">34 questions</text>
+  <path d="M468 104h468" stroke="#27272a"/>
+  <g fill-opacity=".12" stroke-width="1.2">
+    <rect x="488" y="116" width="152" height="22" rx="11" fill="#60a5fa" stroke="#3b82f6"/>
+    <rect x="648" y="116" width="150" height="22" rx="11" fill="#a78bfa" stroke="#8b5cf6"/>
   </g>
-  <g fill-opacity=".16" stroke-width="1.3">
-    <rect x="151" y="517" width="48" height="15" rx="3" fill="#a78bfa" stroke="#8b5cf6"/>
-    <rect x="151" y="537" width="84" height="15" rx="3" fill="#60a5fa" stroke="#3b82f6"/>
-    <rect x="151" y="557" width="42" height="15" rx="3" fill="#4ade80" stroke="#22c55e"/>
-    <rect x="151" y="577" width="52" height="15" rx="3" fill="#fbbf24" stroke="#f59e0b"/>
-  </g>
-  <g fill="#e7e5e4">
-    <rect x="268" y="520" width="144" height="6" rx="3"/><rect x="268" y="534" width="120" height="6" rx="3"/>
-    <rect x="268" y="548" width="136" height="6" rx="3"/><rect x="268" y="562" width="96" height="6" rx="3"/>
-    <rect x="268" y="576" width="128" height="6" rx="3"/>
+  <g font-size="11" text-anchor="middle">
+    <text x="564" y="131" class="bl b">● from the paper</text>
+    <text x="723" y="131" class="v b">● from Gemini</text>
   </g>
 
-  <circle cx="456" cy="528" r="11" fill="#0b0b0c" stroke="#52525b"/>
-  <path d="M453 523l5 5-5 5" fill="none" stroke="#e4e4e7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <!-- Extracted table -->
-  <rect x="468" y="64" width="468" height="236" rx="12" fill="#111113" stroke="#27272a"/>
-  <text x="488" y="94" font-size="15" class="w b">Extracted</text>
-  <text x="916" y="94" font-size="11" class="m mono" text-anchor="end">product_specs_v3</text>
-  <path d="M468 110h468" stroke="#27272a"/>
-  <rect x="484" y="124" width="436" height="24" fill="#18181b"/>
-  <path d="M484 148h436M484 184h436M484 220h436M612 124v132M692 124v132M764 124v132M820 124v132" stroke="#27272a"/>
-  <rect x="484" y="124" width="436" height="132" fill="none" stroke="#27272a"/>
-  <g font-size="11" class="b">
-    <text x="492" y="140" class="s">Product</text><text x="620" y="140" class="v">Weight</text><text x="700" y="140" class="bl">Battery</text><text x="772" y="140" class="g">BT</text><text x="912" y="140" class="a" text-anchor="end">Price</text>
-  </g>
-  <g font-size="12" class="d">
-    <text x="492" y="171" class="w b">Acme X200</text><text x="620" y="171">1.20 kg</text><text x="700" y="171">30 h</text><text x="772" y="171">5.3</text><text x="912" y="171" text-anchor="end">$249.00</text>
-    <text x="492" y="207" class="w b">Soundwave Pro</text><text x="620" y="207">0.98 kg</text><text x="700" y="207">26 h</text><text x="772" y="207">5.2</text><text x="912" y="207" text-anchor="end">$199.00</text>
-    <text x="492" y="243" class="w b">Nordik N5</text><text x="620" y="243">1.05 kg</text><text x="700" y="243">24 h</text><text x="772" y="243">5.0</text><text x="912" y="243" text-anchor="end">€229.00</text>
-  </g>
-  <text x="488" y="282" font-size="11" class="m">3 sources · 3 different layouts · 1 schema</text>
-
-  <!-- Record JSON -->
-  <rect x="468" y="316" width="468" height="180" rx="12" fill="#111113" stroke="#27272a"/>
-  <text x="488" y="342" font-size="12" class="w b">Record</text>
-  <text x="916" y="342" font-size="10" class="m mono" text-anchor="end">soundwave.io/pro</text>
   <g font-size="12" class="mono">
-    <text x="488" y="370" class="s">{</text>
-    <text x="506" y="388" class="s">"product": <tspan class="w">"Soundwave Pro"</tspan>,</text>
-    <text x="506" y="406" class="s">"weight_kg": <tspan class="v">0.98</tspan>,</text>
-    <text x="506" y="424" class="s">"battery_hours": <tspan class="bl">26</tspan>,</text>
-    <text x="506" y="442" class="s">"bluetooth": <tspan class="g">"5.2"</tspan>,</text>
-    <text x="506" y="460" class="s">"price": { "amount": <tspan class="a">199.0</tspan>, "currency": <tspan class="a">"USD"</tspan> }</text>
-    <text x="488" y="478" class="s">}</text>
+    <text x="488" y="170" class="s">[</text>
+    <text x="502" y="190" class="s">{</text>
+    <text x="516" y="210" class="s">"questionNumber": <tspan class="bl">"1(a)"</tspan>,</text>
+    <text x="516" y="230" class="s">"page": <tspan class="bl">3</tspan>,</text>
+    <text x="516" y="250" class="s">"text": <tspan class="bl">"Express f(x) in the form</tspan></text>
+    <text x="588" y="270" class="bl">a(x − b)² + c."<tspan class="s">,</tspan></text>
+    <text x="516" y="290" class="s">"marks": <tspan class="bl">3</tspan>,</text>
+    <text x="916" y="290" class="m" font-size="10" text-anchor="end">printed on the paper</text>
+    <text x="516" y="310" class="s">"topic": <tspan class="v">"Quadratics"</tspan>,</text>
+    <text x="516" y="330" class="s">"subtopic": <tspan class="v">"Completing the square"</tspan>,</text>
+    <text x="516" y="350" class="s">"questionType": <tspan class="v">"calculation"</tspan></text>
+    <text x="502" y="370" class="s">},</text>
+    <text x="502" y="390" class="m">{ … 33 more }</text>
+    <text x="488" y="410" class="s">]</text>
   </g>
+  <path d="M488 426h428" stroke="#27272a"/>
+  <text x="488" y="444" font-size="10" class="m mono">extracted-pages.json kept alongside it for debugging</text>
 
-  <!-- Validation -->
-  <rect x="468" y="512" width="468" height="104" rx="12" fill="#111113" stroke="#27272a"/>
-  <g fill="none" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="490" cy="536" r="7" fill="#12251a" stroke="#22c55e" stroke-width="1"/><path d="M487 536l2 2 4-4"/>
-    <circle cx="490" cy="562" r="7" fill="#12251a" stroke="#22c55e" stroke-width="1"/><path d="M487 562l2 2 4-4"/>
-    <circle cx="490" cy="588" r="7" fill="#12251a" stroke="#22c55e" stroke-width="1"/><path d="M487 588l2 2 4-4"/>
+  <!-- Guarantees -->
+  <rect x="468" y="468" width="468" height="148" rx="12" fill="#111113" stroke="#27272a"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="490" cy="498" r="7" fill="#12251a" stroke="#22c55e" stroke-width="1"/><path d="M487 498l2 2 4-4" stroke="#4ade80" stroke-width="1.5"/>
+    <circle cx="490" cy="528" r="7" fill="#12251a" stroke="#22c55e" stroke-width="1"/><path d="M487 528l2 2 4-4" stroke="#4ade80" stroke-width="1.5"/>
+    <circle cx="490" cy="558" r="7" fill="#12251a" stroke="#22c55e" stroke-width="1"/><path d="M487 558l2 2 4-4" stroke="#4ade80" stroke-width="1.5"/>
+    <circle cx="490" cy="588" r="7" fill="#12251a" stroke="#22c55e" stroke-width="1"/><path d="M487 588l2 2 4-4" stroke="#4ade80" stroke-width="1.5"/>
   </g>
   <g font-size="12" class="p">
-    <text x="506" y="540">Units normalized: 980 g → 0.98 kg, 1,05 → 1.05</text>
-    <text x="506" y="566">All required fields present · 0 nulls</text>
-    <text x="506" y="592">Layout-independent: a site redesign won’t break it</text>
+    <text x="506" y="502">Question text, numbering and pages come from the PDF</text>
+    <text x="506" y="532">Gemini only adds topic, subtopic and question type</text>
+    <text x="506" y="562">Every AI field is checked against the source, or dropped</text>
+    <text x="506" y="592">Paste the JSON into ChatGPT instead of the whole PDF</text>
   </g>
 </svg>
