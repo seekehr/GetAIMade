@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight, MessageCircle, Zap, Users, Smartphone, BarChart3 } from 'lucide-react';
+import { ArrowRight, Globe, ScanText, BookOpen, Radar, Building2 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Logo } from './logo';
 
@@ -101,51 +101,39 @@ export default function Hero({ onContact }: Props) {
 
             {/* Floating AI Service Badges - Positioned Around Mesh */}
             <div className="absolute inset-0 pointer-events-none">
-              {/* AI Chatbots - Top Right */}
+              {/* Web Scraping - Top Right */}
               <div className="absolute top-8 sm:top-12 right-0 animate-float float-delay-1 animate-fade-in-right" style={{animationDelay: '0.3s'}}>
                 <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
-                  <MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 text-white shrink-0" />
-                  <span className="text-[10px] sm:text-xs font-semibold text-white whitespace-nowrap">AI Chatbots</span>
+                  <Globe className="w-3 h-3 sm:w-4 sm:h-4 text-white shrink-0" />
+                  <span className="text-[10px] sm:text-xs font-semibold text-white whitespace-nowrap">Web Scraping</span>
                 </div>
               </div>
-
-              {/* Automations - Right Center */}
+              {/* Data Extraction - Right Center */}
               <div className="absolute top-1/2 right-0 -translate-y-1/2 animate-float float-delay-2 animate-fade-in-right" style={{animationDelay: '0.4s'}}>
                 <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
-                  <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-white shrink-0" />
-                  <span className="text-[10px] sm:text-xs font-semibold text-white whitespace-nowrap">Automations</span>
+                  <ScanText className="w-3 h-3 sm:w-4 sm:h-4 text-white shrink-0" />
+                  <span className="text-[10px] sm:text-xs font-semibold text-white whitespace-nowrap">Data Extraction</span>
                 </div>
               </div>
-
-              {/* Lead Generation - Bottom Right */}
+              {/* Lead Intelligence - Bottom Right */}
               <div className="absolute bottom-8 sm:bottom-12 right-0 animate-float float-delay-3 animate-fade-in-right" style={{animationDelay: '0.5s'}}>
                 <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
-                  <BarChart3 className="w-3 h-3 sm:w-4 sm:h-4 text-white shrink-0" />
-                  <span className="text-[10px] sm:text-xs font-semibold text-white whitespace-nowrap">Lead Gen</span>
+                  <Building2 className="w-3 h-3 sm:w-4 sm:h-4 text-white shrink-0" />
+                  <span className="text-[10px] sm:text-xs font-semibold text-white whitespace-nowrap">Lead Intel</span>
                 </div>
               </div>
-
-              {/* Integrations - Top Left */}
+              {/* RAG Systems - Top Left */}
               <div className="absolute top-8 sm:top-20 left-0 sm:left-12 animate-float float-delay-3 animate-fade-in-left" style={{animationDelay: '0.45s'}}>
                 <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
-                  <Smartphone className="w-3 h-3 sm:w-4 sm:h-4 text-white shrink-0" />
-                  <span className="text-[10px] sm:text-xs font-semibold text-white whitespace-nowrap">Integrations</span>
+                  <BookOpen className="w-3 h-3 sm:w-4 sm:h-4 text-white shrink-0" />
+                  <span className="text-[10px] sm:text-xs font-semibold text-white whitespace-nowrap">RAG Systems</span>
                 </div>
               </div>
-
-              {/* AI Agents - Left Center */}
-              <div className="absolute top-1/2 left-0 -translate-y-1/2 animate-float float-delay-2 animate-fade-in-left" style={{animationDelay: '0.35s'}}>
-                <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
-                  <Users className="w-3 h-3 sm:w-4 sm:h-4 text-white shrink-0" />
-                  <span className="text-[10px] sm:text-xs font-semibold text-white whitespace-nowrap">AI Agents</span>
-                </div>
-              </div>
-
-              {/* Analytics - Bottom Left */}
+              {/* Monitoring - Bottom Left */}
               <div className="absolute bottom-8 sm:bottom-20 left-0 animate-float float-delay-1 animate-fade-in-left" style={{animationDelay: '0.25s'}}>
                 <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-white/20 bg-black/60 backdrop-blur-sm hover:border-white/40 transition-all">
-                  <BarChart3 className="w-3 h-3 sm:w-4 sm:h-4 text-white shrink-0" />
-                  <span className="text-[10px] sm:text-xs font-semibold text-white whitespace-nowrap">Analytics</span>
+                  <Radar className="w-3 h-3 sm:w-4 sm:h-4 text-white shrink-0" />
+                  <span className="text-[10px] sm:text-xs font-semibold text-white whitespace-nowrap">Monitoring</span>
                 </div>
               </div>
 
