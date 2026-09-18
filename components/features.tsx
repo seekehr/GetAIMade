@@ -11,7 +11,7 @@ const services = [
     description:
       'Scrape websites, directories, listings, docs, or public data sources, then clean and structure the data automatically.',
     example: {
-      name: 'Quizlet flashcard scraper',
+      name: 'Quizlet Flashcard Scraper',
       summary:
         'Backs up every public flashcard set in every public folder on a Quizlet profile, one text file per set.',
     },
@@ -148,10 +148,11 @@ export default function Features() {
             return (
               <article
                 key={service.title}
+                id={`service-${String(idx + 1).padStart(2, '0')}`}
                 ref={(el) => {
                   itemsRef.current[idx] = el;
                 }}
-                className={`grid lg:grid-cols-12 gap-8 lg:gap-x-16 lg:gap-y-8 ${
+                className={`scroll-mt-24 grid lg:grid-cols-12 gap-8 lg:gap-x-16 lg:gap-y-8 ${
                   isVisible ? 'animate-fade-in-up' : 'opacity-0'
                 }`}
               >

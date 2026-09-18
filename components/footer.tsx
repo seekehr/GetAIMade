@@ -6,15 +6,29 @@ import { Logo } from './logo';
 const footerLinks = [
   {
     title: 'Services',
-    links: ['AI Chatbots', 'Automation', 'Web Scraping', 'AI Agents', 'Integrations'],
+    links: [
+      { label: 'AI-Powered Web Scraping', href: '#service-01' },
+      { label: 'Smart Data Extraction', href: '#service-02' },
+      { label: 'Custom RAG Systems', href: '#service-03' },
+      { label: 'Research & Monitoring Systems', href: '#service-04' },
+      { label: 'Lead & Company Intelligence', href: '#service-05' },
+    ],
   },
   {
     title: 'Company',
-    links: ['About', 'Contact'],
+    links: [
+      { label: 'About', href: '#services' },
+      { label: 'Contact', href: '#contact' },
+    ],
   },
   {
     title: 'Legal',
-    links: ['Privacy', 'Terms', 'Security', 'Compliance'],
+    links: [
+      { label: 'Privacy', href: '#' },
+      { label: 'Terms', href: '#' },
+      { label: 'Security', href: '#' },
+      { label: 'Compliance', href: '#' },
+    ],
   },
 ];
 
@@ -41,13 +55,13 @@ export default function Footer() {
                 {section.title}
               </h4>
               <ul className="space-y-3">
-                {section.links.map((link, linkIdx) => (
-                  <li key={linkIdx}>
+                {section.links.map((link) => (
+                  <li key={link.label}>
                     <a
-                      href="#"
+                      href={link.href}
                       className="text-white/60 hover:text-white transition-colors font-light text-sm"
                     >
-                      {link}
+                      {link.label}
                     </a>
                   </li>
                 ))}
