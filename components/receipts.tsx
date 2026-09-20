@@ -137,6 +137,7 @@ export default function Receipts() {
                   height={shot.height}
                   sizes="(max-width: 768px) 90vw, 760px"
                   priority={idx === 0}
+                  loading="eager"
                   draggable={false}
                   style={{ maskImage: MASK_X, WebkitMaskImage: MASK_X }}
                   className="max-h-full max-w-full w-auto h-auto object-contain select-none"
@@ -162,6 +163,7 @@ export default function Receipts() {
                   height={shots[1].height}
                   sizes="(max-width: 768px) 90vw, 760px"
                   aria-hidden="true"
+                  loading="eager"
                   draggable={false}
                   style={{ maskImage: MASK_X, WebkitMaskImage: MASK_X }}
                   className="max-h-full max-w-full w-auto h-auto object-contain blur-xl scale-105 opacity-30 select-none pointer-events-none"
@@ -177,7 +179,7 @@ export default function Receipts() {
                 <p className="text-white font-bold text-xl">More reviews in the server</p>
                 <p className="text-white/60 text-sm max-w-sm leading-relaxed">
                   The rest of the client feedback lives in{' '}
-                  <span className="text-white/85 font-medium">#client-reviews</span>, unedited and in
+                  <span className="text-white/85 font-medium">#vouches</span>, unedited and in
                   full.
                 </p>
               </div>
@@ -198,7 +200,7 @@ export default function Receipts() {
               className="absolute top-4 right-5 sm:right-7 z-20 flex items-center gap-1.5 text-[11px] font-medium text-white/35"
             >
               <DiscordIcon className="w-3.5 h-3.5" />
-              #client-reviews
+              #vouches
             </div>
 
             {/* Arrows */}
@@ -263,7 +265,7 @@ export default function Receipts() {
             <DiscordIcon className="w-6 h-6 group-hover:scale-110 group-hover:-rotate-6 transition-transform" />
             Join Discord to see full reviews
           </a>
-          <p className="text-xs text-white/35">Free to join — the full #client-reviews channel.</p>
+          <p className="text-xs text-white/35">Free to join — the full #vouches channel.</p>
         </div>
       </div>
     </section>

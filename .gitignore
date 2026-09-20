@@ -15,6 +15,6 @@ node_modules
 .DS_Store
 
 .claude/
-.vscode/
 .cursor/
 .idea/
+config.bat
