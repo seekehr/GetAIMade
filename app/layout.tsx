@@ -12,7 +12,7 @@ const siteUrl = 'https://getaimade.com';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Get AI Made | Custom AI Automation and Scrapping Agency',
+    default: 'Get AI Made | Custom AI Automation and Scrapping',
     template: '%s | Get AI Made',
   },
   description: 'AI-powered web scraping, smart data extraction, research & monitoring systems, custom RAG systems, and lead & company intelligence.',
@@ -45,14 +45,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: siteUrl,
     siteName: 'Get AI Made',
-    title: 'Get AI Made | Custom AI Automation Agency',
+    title: 'Get AI Made | Custom AI Automation',
     description: 'AI-powered web scraping, smart data extraction, research & monitoring systems, custom RAG systems, and lead & company intelligence.',
     images: [
       {
         url: '/favicon.svg',
         width: 1200,
         height: 630,
-        alt: 'Get AI Made – Custom AI Automation Agency',
+        alt: 'Get AI Made – Custom AI Automation',
       },
     ],
   },
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@Seekehr',
     creator: '@Seekehr',
-    title: 'Get AI Made | Custom AI Automation Agency',
+    title: 'Get AI Made | Custom AI Automation',
     description: 'AI-powered web scraping, smart data extraction, research & monitoring systems, custom RAG systems, and lead & company intelligence.',
     images: ['/favicon.svg'],
   },
@@ -106,7 +106,7 @@ const jsonLd = {
       '@type': 'WebPage',
       '@id': `${siteUrl}/#webpage`,
       url: siteUrl,
-      name: 'Get AI Made | Custom AI Automation Agency',
+      name: 'Get AI Made | Custom AI Automation',
       isPartOf: { '@id': `${siteUrl}/#website` },
       about: { '@id': `${siteUrl}/#organization` },
       description: 'Custom AI chatbots, automation systems, and AI agents for modern businesses.',

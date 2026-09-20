@@ -5,7 +5,7 @@ import Navbar from '@/components/navbar';
 import Hero from '@/components/hero';
 import Features from '@/components/features';
 import Stats from '@/components/stats';
-import Testimonials from '@/components/testimonials';
+import Receipts from '@/components/receipts';
 import CTA from '@/components/cta';
 import Footer from '@/components/footer';
 import ContactModal from '@/components/contact-modal';
@@ -42,7 +42,7 @@ export default function Page() {
         <Navbar onContact={() => setContactOpen(true)} />
         <Hero onContact={() => setContactOpen(true)} />
         <Features />
-        <Testimonials />
+        <Receipts />
         <CTA onContact={() => setContactOpen(true)} />
         <Footer />
       </div>
