@@ -12,6 +12,11 @@ const DiscordIcon = ({ className = 'w-5 h-5' }: { className?: string }) => (
   </svg>
 );
 
+/* Fades the screenshot edges into the page so nothing reads as a pasted-in rectangle.
+   One axis per element so the two masks compose without needing mask-composite. */
+const MASK_Y = 'linear-gradient(to bottom, transparent 0%, #000 6%, #000 94%, transparent 100%)';
+const MASK_X = 'linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%)';
+
 const shots = [
   {
     src: '/reviews/review-1.png',
@@ -38,6 +43,7 @@ const TOTAL = shots.length + 1;
 
 export default function Receipts() {
   const [index, setIndex] = React.useState(0);
+  const dragStart = React.useRef<number | null>(null);
 
   const prev = () => setIndex((i) => Math.max(0, i - 1));
   const next = () => setIndex((i) => Math.min(TOTAL - 1, i + 1));
@@ -53,13 +59,25 @@ export default function Receipts() {
     }
   };
 
+  const onPointerDown = (e: React.PointerEvent) => {
+    dragStart.current = e.clientX;
+  };
+
+  const onPointerUp = (e: React.PointerEvent) => {
+    if (dragStart.current === null) return;
+    const dx = e.clientX - dragStart.current;
+    dragStart.current = null;
+    if (dx < -50) next();
+    else if (dx > 50) prev();
+  };
+
   const locked = index === LOCKED_INDEX;
 
   return (
     <section className="py-32 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
-        <div className="space-y-6 mb-12">
+        <div className="space-y-6 mb-14">
           <p className="text-xs font-semibold text-white/60 uppercase tracking-widest">
             PROOF, NOT PROMISES
           </p>
@@ -71,20 +89,44 @@ export default function Receipts() {
 
         {/* Viewer */}
         <div
-          className="relative rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.01] overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+          className="relative rounded-3xl overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           tabIndex={0}
           onKeyDown={onKeyDown}
           role="group"
           aria-roledescription="carousel"
           aria-label="Client reviews from Discord"
         >
+          {/* Top hairline — catches the light instead of drawing a hard box */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent z-20"
+          />
+
           {/* Stage */}
-          <div className="relative h-[340px] sm:h-[440px] flex items-center justify-center p-4 sm:p-8">
+          <div
+            className="relative h-[380px] sm:h-[520px] touch-pan-y"
+            onPointerDown={onPointerDown}
+            onPointerUp={onPointerUp}
+          >
+            {/* Ambient light behind the screenshots */}
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+              <div
+                className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] rounded-full blur-[100px] transition-colors duration-700 ${
+                  locked ? 'bg-[#5865F2]/30' : 'bg-[#5865F2]/15'
+                }`}
+              />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[45%] h-[45%] rounded-full bg-white/[0.07] blur-[80px]" />
+            </div>
+
+            {/* Screenshots */}
             {shots.map((shot, idx) => (
               <div
                 key={shot.src}
-                className={`absolute inset-0 flex items-center justify-center p-4 sm:p-8 transition-opacity duration-500 ${
-                  index === idx ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                style={{ maskImage: MASK_Y, WebkitMaskImage: MASK_Y }}
+                className={`absolute inset-0 flex items-center justify-center p-6 sm:p-10 transition-all duration-700 ease-out ${
+                  index === idx
+                    ? 'opacity-100 scale-100 blur-0'
+                    : 'opacity-0 scale-[0.97] blur-[2px] pointer-events-none'
                 }`}
                 aria-hidden={index !== idx}
               >
@@ -93,42 +135,70 @@ export default function Receipts() {
                   alt={shot.alt}
                   width={shot.width}
                   height={shot.height}
-                  sizes="(max-width: 768px) 90vw, 700px"
+                  sizes="(max-width: 768px) 90vw, 760px"
                   priority={idx === 0}
-                  className="max-h-full w-auto object-contain rounded-lg border border-white/10 shadow-2xl shadow-black/60"
+                  draggable={false}
+                  style={{ maskImage: MASK_X, WebkitMaskImage: MASK_X }}
+                  className="max-h-full max-w-full w-auto h-auto object-contain select-none"
                 />
               </div>
             ))}
 
             {/* Locked slide */}
             <div
-              className={`absolute inset-0 transition-opacity duration-500 ${
-                locked ? 'opacity-100' : 'opacity-0 pointer-events-none'
+              className={`absolute inset-0 transition-all duration-700 ease-out ${
+                locked ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.97] pointer-events-none'
               }`}
               aria-hidden={!locked}
             >
-              <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-8">
+              <div
+                className="absolute inset-0 flex items-center justify-center p-6 sm:p-10"
+                style={{ maskImage: MASK_Y, WebkitMaskImage: MASK_Y }}
+              >
                 <Image
                   src={shots[1].src}
                   alt=""
                   width={shots[1].width}
                   height={shots[1].height}
-                  sizes="(max-width: 768px) 90vw, 700px"
+                  sizes="(max-width: 768px) 90vw, 760px"
                   aria-hidden="true"
                   draggable={false}
-                  className="max-h-full w-auto object-contain rounded-lg blur-md scale-105 opacity-40 select-none pointer-events-none"
+                  style={{ maskImage: MASK_X, WebkitMaskImage: MASK_X }}
+                  className="max-h-full max-w-full w-auto h-auto object-contain blur-xl scale-105 opacity-30 select-none pointer-events-none"
                 />
               </div>
-              <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center gap-4 px-6">
-                <div className="w-12 h-12 rounded-full border border-white/20 bg-white/10 flex items-center justify-center">
-                  <Lock className="w-5 h-5 text-white/80" strokeWidth={2} />
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center gap-4 px-6">
+                <div className="relative">
+                  <div className="absolute inset-0 rounded-full bg-[#5865F2]/40 blur-xl animate-pulse" />
+                  <div className="relative w-14 h-14 rounded-full border border-white/20 bg-white/[0.08] backdrop-blur-sm flex items-center justify-center">
+                    <Lock className="w-5 h-5 text-white" strokeWidth={2} />
+                  </div>
                 </div>
-                <p className="text-white font-bold text-lg">More reviews in the server</p>
+                <p className="text-white font-bold text-xl">More reviews in the server</p>
                 <p className="text-white/60 text-sm max-w-sm leading-relaxed">
                   The rest of the client feedback lives in{' '}
-                  <span className="text-white/80">#client-reviews</span>, unedited and in full.
+                  <span className="text-white/85 font-medium">#client-reviews</span>, unedited and in
+                  full.
                 </p>
               </div>
+            </div>
+
+            {/* Counter */}
+            <div
+              aria-hidden="true"
+              className="absolute top-5 left-6 sm:left-8 z-20 text-[11px] font-mono tabular-nums tracking-widest text-white/35"
+            >
+              {String(index + 1).padStart(2, '0')}
+              <span className="text-white/20"> / {String(TOTAL).padStart(2, '0')}</span>
+            </div>
+
+            {/* Channel tag */}
+            <div
+              aria-hidden="true"
+              className="absolute top-4 right-5 sm:right-7 z-20 flex items-center gap-1.5 text-[11px] font-medium text-white/35"
+            >
+              <DiscordIcon className="w-3.5 h-3.5" />
+              #client-reviews
             </div>
 
             {/* Arrows */}
@@ -136,7 +206,7 @@ export default function Receipts() {
               onClick={prev}
               disabled={index === 0}
               aria-label="Previous review"
-              className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full border border-white/15 bg-black/60 backdrop-blur text-white/70 enabled:hover:text-white enabled:hover:border-white/50 enabled:hover:bg-white/10 enabled:hover:scale-110 transition-all disabled:opacity-25 disabled:cursor-not-allowed"
+              className="absolute left-1 sm:left-3 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full border border-white/10 bg-black/50 backdrop-blur-md text-white/60 enabled:hover:text-white enabled:hover:border-white/40 enabled:hover:bg-white/10 enabled:hover:scale-110 enabled:active:scale-95 transition-all disabled:opacity-0 disabled:pointer-events-none"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -144,40 +214,56 @@ export default function Receipts() {
               onClick={next}
               disabled={index === TOTAL - 1}
               aria-label="Next review"
-              className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full border border-white/15 bg-black/60 backdrop-blur text-white/70 enabled:hover:text-white enabled:hover:border-white/50 enabled:hover:bg-white/10 enabled:hover:scale-110 transition-all disabled:opacity-25 disabled:cursor-not-allowed"
+              className="absolute right-1 sm:right-3 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full border border-white/10 bg-black/50 backdrop-blur-md text-white/60 enabled:hover:text-white enabled:hover:border-white/40 enabled:hover:bg-white/10 enabled:hover:scale-110 enabled:active:scale-95 transition-all disabled:opacity-0 disabled:pointer-events-none"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
 
           {/* Progress */}
-          <div className="flex items-center justify-center gap-2 py-4 border-t border-white/10 bg-white/[0.02]">
-            {Array.from({ length: TOTAL }).map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setIndex(idx)}
-                aria-label={idx === LOCKED_INDEX ? 'Locked reviews' : `Review ${idx + 1}`}
-                aria-current={index === idx}
-                className={`h-2 rounded-full transition-all hover:scale-125 ${
-                  index === idx ? 'bg-white w-8' : 'bg-white/25 w-2 hover:bg-white/60'
-                }`}
-              />
-            ))}
+          <div className="relative z-20 flex items-center justify-center gap-2.5 pb-1">
+            {Array.from({ length: TOTAL }).map((_, idx) => {
+              const isLock = idx === LOCKED_INDEX;
+              const active = index === idx;
+              return (
+                <button
+                  key={idx}
+                  onClick={() => setIndex(idx)}
+                  aria-label={isLock ? 'Locked reviews' : `Review ${idx + 1}`}
+                  aria-current={active}
+                  className={`flex items-center justify-center transition-all ${
+                    isLock
+                      ? `h-4 w-4 ${active ? 'text-white' : 'text-white/25 hover:text-white/60'}`
+                      : `h-1.5 rounded-full hover:scale-125 ${
+                          active
+                            ? 'bg-white w-8 shadow-[0_0_12px_rgba(255,255,255,0.5)]'
+                            : 'bg-white/20 w-4 hover:bg-white/50'
+                        }`
+                  }`}
+                >
+                  {isLock && <Lock className="w-3.5 h-3.5" strokeWidth={2.5} />}
+                </button>
+              );
+            })}
           </div>
         </div>
 
         {/* CTA */}
-        <div className="mt-8 flex flex-col items-center gap-3">
+        <div className="mt-10 flex flex-col items-center gap-3">
           <a
             href={DISCORD_INVITE}
             target="_blank"
             rel="noopener noreferrer"
-            className="group w-full sm:w-auto flex items-center justify-center gap-3 bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold text-base px-8 py-4 rounded-xl transition-all hover:scale-[1.02] shadow-lg shadow-[#5865F2]/30 hover:shadow-xl hover:shadow-[#5865F2]/40"
+            className="group relative w-full sm:w-auto flex items-center justify-center gap-3 bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold text-base px-8 py-4 rounded-2xl transition-all hover:scale-[1.03] active:scale-[0.99] shadow-[0_8px_40px_-8px_rgba(88,101,242,0.7)] hover:shadow-[0_12px_50px_-6px_rgba(88,101,242,0.9)]"
           >
-            <DiscordIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            <span
+              aria-hidden="true"
+              className="absolute inset-x-6 -top-px h-px bg-gradient-to-r from-transparent via-white/60 to-transparent"
+            />
+            <DiscordIcon className="w-6 h-6 group-hover:scale-110 group-hover:-rotate-6 transition-transform" />
             Join Discord to see full reviews
           </a>
-          <p className="text-xs text-white/40">Free to join — the full #client-reviews channel.</p>
+          <p className="text-xs text-white/35">Free to join — the full #client-reviews channel.</p>
         </div>
       </div>
     </section>
