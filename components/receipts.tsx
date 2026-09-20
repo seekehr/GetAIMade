@@ -177,7 +177,7 @@ export default function Receipts() {
             <DiscordIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />
             Join Discord to see full reviews
           </a>
-          <p className="text-xs text-white/40">Free to join. No signup needed to read.</p>
+          <p className="text-xs text-white/40">Free to join — the full #client-reviews channel.</p>
         </div>
       </div>
     </section>
